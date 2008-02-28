@@ -1,0 +1,305 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"POT-Creation-Date: 2006-10-26 15:06+0000\n"
+"PO-Revision-Date: 2006-05-31 15:47+0100\n"
+"Last-Translator: Tom Lazar <tom@tomster.org>\n"
+"Language-Team: German <jan.ulrich@hasecke.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: de\n"
+"Language-Name: German\n"
+"Preferred-Encodings: utf-8 latin-1\n"
+"Domain: quills\n"
+
+#. <input class="standalone" i18n:attributes="value" name="folder_factories:method" type="submit" value="Add Weblog Entry"/>
+#. <input class="standalone" i18n:attributes="value" name="folder_factories:method" type="submit" value="Add a Topic"/>
+#. <img alt="Atom" height="15" i18n:attributes="alt title" src="" tal:attributes="src string:$portal_url/atom_feed.gif" title="Atom Enabled" width="80"/>
+#. Default: "Atom"
+#: skins/Quills/portlet_quills.pt
+msgid "Atom"
+msgstr "Atom"
+
+#. Default: "Atom Enabled"
+#: skins/Quills/portlet_quills.pt
+msgid "Atom Enabled"
+msgstr "Atom "
+
+#. <img alt="Atom" height="15" i18n:attributes="alt title" src="" tal:attributes="src string:$portal_url/atom_feed.gif" title="Atom Enabled" width="80"/>
+#. <link href="atom.xml" i18n:attributes="title" rel="alternate" title="Atom feed" type="application/atom+xml"/>
+#. Default: "Atom feed"
+#: skins/Quills/quills_header_macros.pt
+msgid "Atom feed"
+msgstr "Atom-Feed"
+
+#. Default: "Get Firefox"
+#: skins/Quills/portlet_quills.pt
+msgid "Get Firefox"
+msgstr "Nimm Firefox"
+
+#. Default: "Get Firefox - Take Back the Web"
+#: skins/Quills/portlet_quills.pt
+msgid "Get Firefox - Take Back the Web"
+msgstr "Nimm Firefox - Hole Dir das Web zurück."
+
+#. Default: "Powered by Plone"
+#: skins/Quills/portlet_quills.pt
+msgid "Powered by Plone"
+msgstr "Betrieben mit Plone"
+
+#. <img alt="Powered by Quills" height="15" i18n:attributes="alt title" src="" tal:attributes="src string:$portal_url/quills_powered.gif" title="Quills weblog system for Plone: by Etria" width="80"/>
+#. Default: "Powered by Quills"
+#: skins/Quills/portlet_quills.pt
+msgid "Powered by Quills"
+msgstr "Betrieben mit Quills"
+
+#. Default: "Quills weblog system for Plone: by Etria"
+#: skins/Quills/portlet_quills.pt
+msgid "Quills weblog system for Plone: by Etria"
+msgstr ""
+
+#. <img alt="Powered by Quills" height="15" i18n:attributes="alt title" src="" tal:attributes="src string:$portal_url/quills_powered.gif" title="Quills weblog system for Plone: by Etria" width="80"/>
+#. <img alt="RDF" height="15" i18n:attributes="alt title" src="" tal:attributes="src string:$portal_url/rdf_feed.gif" title="Semantic feed" width="80"/>
+#. Default: "RDF"
+#: skins/Quills/portlet_quills.pt
+msgid "RDF"
+msgstr "RDF"
+
+#. Default: "RDF 1.0 feed"
+#: skins/Quills/quills_header_macros.pt
+msgid "RDF 1.0 feed"
+msgstr ""
+
+#. Default: "RDF 1.1 feed"
+#: skins/Quills/quills_header_macros.pt
+msgid "RDF 1.1 feed"
+msgstr "RDF 1.1 Feed"
+
+#. <img alt="RSS 2.0" height="15" i18n:attributes="alt title" src="" tal:attributes="src string:$portal_url/rss_feed.gif" title="RSS 2.0 feed" width="80"/>
+#. Default: "RSS 2.0"
+#: skins/Quills/portlet_quills.pt
+msgid "RSS 2.0"
+msgstr "RSS 2.0"
+
+#. <img alt="RSS 2.0" height="15" i18n:attributes="alt title" src="" tal:attributes="src string:$portal_url/rss_feed.gif" title="RSS 2.0 feed" width="80"/>
+#. Default: "RSS 2.0 feed"
+#: skins/Quills/quills_header_macros.pt
+#: skins/Quills/portlet_quills.pt
+msgid "RSS 2.0 feed"
+msgstr "RSS 2.0 Feed"
+
+#. <img alt="RDF" height="15" i18n:attributes="alt title" src="" tal:attributes="src string:$portal_url/rdf_feed.gif" title="Semantic feed" width="80"/>
+#. Default: "Semantic feed"
+#: skins/Quills/portlet_quills.pt
+msgid "Semantic feed"
+msgstr "Semantischer Feed"
+
+#. Default: "This Plone site was built using the Plone Content Management System. Click for more information."
+#: skins/Quills/portlet_quills.pt
+msgid "This Plone site was built using the Plone Content Management System. Click for more information."
+msgstr "Diese Seite wurde mit dem Inhaltsverwaltungs-System Plone erstellt. Hier Klicken um mehr zu erfahren."
+
+#. Default: "Topics"
+#: browser/topic_listing.pt
+msgid "Topics"
+msgstr "Rubriken"
+
+#. Default: "Recent Comments"
+#: skins/Quills/portlet_recent_comments.pt
+msgid "box_recent_comments"
+msgstr "Letzte Kommentare"
+
+#. Default: "No comments posted yet."
+#: skins/Quills/portlet_recent_comments.pt
+msgid "box_recent_no_comments"
+msgstr "Noch keine Kommentare."
+
+#. Default: "No items changed yet."
+#: skins/Quills/portlet_recent_posts.pt
+msgid "box_recent_no_items"
+msgstr "Keine veränderten Einträge vorhanden."
+
+#. Default: "Recent Posts"
+#: skins/Quills/portlet_recent_posts.pt
+msgid "box_recent_posts"
+msgstr "Letzte Einträge"
+
+#. Default: "Entries For:"
+#: skins/Quills/weblogarchive_view.pt
+msgid "entries_for"
+msgstr "Einträge zu:"
+
+## 2 more: Quills/trunk/skins/Quills/weblog_macros.pt, Quills/trunk/skins/Quills/weblog_macros.pt
+#. <span i18n:translate="filed_under">
+#. Filed Under:
+#. </span>
+#. Default: "Filed Under:"
+#: skins/Quills/entry_macros.pt
+msgid "filed_under"
+msgstr "Einsortiert unter:"
+
+#. <h5 i18n:translate="heading_archives">
+#. Archives
+#. </h5>
+#. Default: "Archives"
+#: skins/Quills/portlet_archives.pt
+msgid "heading_archives"
+msgstr "Archive"
+
+#. Default: "Tag cloud"
+#: skins/Quills/tag_cloud.pt
+msgid "heading_tagcloud"
+msgstr "Tag Wolke"
+
+#. <h5 i18n:translate="heading_topics">
+#. Topics
+#. </h5>
+#. Default: "Topics"
+#: skins/Quills/portlet_topics.pt
+msgid "heading_topics"
+msgstr "Rubriken"
+
+#. <h3 i18n:translate="heading_trackback">
+#. Trackback
+#. </h3>
+#. Default: "Trackback"
+#: skins/Quills/entry_macros.pt
+msgid "heading_trackback"
+msgstr "Trackback"
+
+#. Default: "Weblog Authors"
+#: browser/author_listing.pt
+msgid "heading_weblog_topics"
+msgstr "Web-Log Autoren"
+
+#. Default: "A brief introduction for this entry."
+msgid "help_description"
+msgstr "Eine kurze Einführung zu diesem Eintrag."
+
+#. Default: "Select the number of weblog entries you would like to display on the front page and any other batched pages."
+msgid "help_entries_per_page"
+msgstr "Wähle die Anzahl der Web-Log Einträge, die auf der Startseite und in anderen blätterbaren Listen angezeigt werden soll."
+
+#. Default: "Select the number of entries you would like to display in the various Quills portlets."
+msgid "help_entries_per_portlet"
+msgstr "Wähle die Anzahl der Einträge, die in den verschiedenen Quills-Portlets anzuzeigen sein soll."
+
+#. Default: "When enabled, entries will be grouped under a header showing the date. Otherwise, the entries will be just be shown underneath eachother."
+msgid "help_group_by_dates"
+msgstr "Anwählen, wenn die Titelzeilen unter einen Datum gruppiert werden sollen. Sonst werden die Einträge einer nach dem anderen angezeigt"
+
+#. Default: "When enabled, show only the title and excerpt in the main weblog view.  If an entry has no excerpt, only its title will be displayed."
+msgid "help_only_excerpt_in_weblog_view"
+msgstr ""
+
+#. Default: "This controls the display of topic images in the weblog view."
+msgid "help_show_topic_images_in_weblog_view"
+msgstr ""
+
+#. Default: "This controls wether trackback are enabled in the weblog"
+msgid "help_trackback_enabled"
+msgstr ""
+
+#. Default: "A brief description of this weblog.  This text will  be displayed at the top of the page before any weblog entries."
+msgid "help_weblog_description"
+msgstr ""
+
+#. Default: "Excerpt"
+msgid "label_description"
+msgstr "Auszug"
+
+#. Default: "Drafts:"
+#: browser/topic_listing.pt
+msgid "label_drafts"
+msgstr "Entwürfe"
+
+#. Default: "Entries Per Page"
+msgid "label_entries_per_page"
+msgstr "Einträge pro Seite"
+
+#. Default: "Entries Per Portlet"
+msgid "label_entries_per_portlet"
+msgstr "Einträge pro Portlet"
+
+#. Default: "Group entries by date in overviews?"
+msgid "label_group_by_dates"
+msgstr "Einträge in der Übersicht nach Datum gruppieren?"
+
+#. Default: "Last Post:"
+#: browser/topic_listing.pt
+msgid "label_last_post"
+msgstr "Neuester Eintrag"
+
+#. Default: "No Posts"
+#: browser/topic_listing.pt
+msgid "label_no_posts"
+msgstr "Keine Einträge"
+
+#. Default: "Only show excerpts in overviews?"
+msgid "label_only_excerpt_in_weblog_view"
+msgstr "Nur Auszüge in Übersichten anzeigen?"
+
+#. Default: "Published:"
+#: browser/topic_listing.pt
+msgid "label_published"
+msgstr "Veröffentlicht:"
+
+#. Default: "Show Topic Images In Weblog View?"
+msgid "label_show_topic_images_in_weblog_view"
+msgstr "Rubriken-Bilder in der Web-Log Ansicht anzeigen?"
+
+#. Default: "Entry Text"
+msgid "label_text"
+msgstr "Eintrags Text"
+
+#. Default: "Enable the receiving of trackback pings"
+msgid "label_trackback_enabled"
+msgstr "Zulassen von Trackback-Pings?"
+
+#. Default: "Description"
+msgid "label_weblog_description"
+msgstr "Beschreibung"
+
+## 1 more: Quills/trunk/skins/Quills/siteplanet_view.pt
+#. <p i18n:translate="no_weblog_entries">
+#. No weblog entries have been posted.
+#. </p>
+#. Default: "No weblog entries have been posted."
+#: skins/Quills/weblog_macros.pt
+#: skins/Quills/siteplanet_view.pt
+msgid "no_weblog_entries"
+msgstr "Es wurden noch keine Weblog-Einträge angelegt."
+
+#. Default: "Comments:"
+#: skins/Quills/entry_macros.pt
+msgid "number_of_comments"
+msgstr "Komentare:"
+
+#. Default: "read more..."
+#: skins/Quills/entry_macros.pt
+msgid "read_more"
+msgstr "mehr lesen..."
+
+#. Default: "Topics in Detail"
+#: skins/Quills/portlet_topics.pt
+msgid "topic_detail"
+msgstr "Rubriken im Detail"
+
+#. <span i18n:translate="trackback_uri">
+#. The URI to TrackBack this entry is:
+#. </span>
+#. Default: "The URI to TrackBack this entry is:"
+#: skins/Quills/entry_macros.pt
+msgid "trackback_uri"
+msgstr "Der URI für den TrackBack lautet:"
+
+#. Default: "Note: for some weblog editors you will need to provide the following string as id to edit this blog:"
+#: skins/Quills/weblog_view.pt
+msgid "weblog_edit_app_note"
+msgstr "Anmerkung: Für einige Web-Log Editoren muss die folgende Zeichenfolge als Identität zum Bearbeiten des Web-Logs angegeben werden:"
+

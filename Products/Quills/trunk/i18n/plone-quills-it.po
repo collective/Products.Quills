@@ -1,0 +1,52 @@
+# Quills Italian Translation
+# Enzo Cesanelli <enzo at noiza dot com>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.5rc2\n"
+"POT-Creation-Date: 2006-06-29 12:25+0000\n"
+"PO-Revision-Date: 2006-08-18 19:00+0200\n"
+"Last-Translator: Enzo Cesanelli <enzo at noiza dot com>\n"
+"Language-Team: Enzo Cesanelli <enzo at noiza dot com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: it\n"
+"Language-Name: Italian\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: plone\n"
+
+msgid "Archive"
+msgstr ""
+
+msgid "Comments"
+msgstr ""
+
+msgid "Drafts"
+msgstr ""
+
+# Workflow transitions (publish is known, so omiting that one)
+msgid "Revert to Draft"
+msgstr "Riporta a Bozza"
+
+# Content tabs
+msgid "Topics"
+msgstr ""
+
+msgid "Trackbacks"
+msgstr ""
+
+msgid "Weblog"
+msgstr "Blog"
+
+# Content type names
+msgid "Weblog Entry"
+msgstr "Post"
+
+# Workflow states (published is known, so omitting that one)
+msgid "draft"
+msgstr "Bozza"
+
+msgid "publish_in_place"
+msgstr "Pubblica"
+

@@ -1,0 +1,52 @@
+# Gettext Message File for Quills.
+# This one should include the workflow names, content type names and
+# other strangely not i18n-taggable stuff. Empty for now.
+msgid ""
+msgstr ""
+"Project-Id-Version: Quills 1.5\n"
+"POT-Creation-Date: 2006-06-29 12:25+0000\n"
+"PO-Revision-Date: 2006-06-29 12:25+0000\n"
+"Last-Translator: Reinout van Rees <reinout@vanrees.org>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: latin1 utf-8\n"
+"Domain: plone\n"
+
+# Content type names
+msgid "Weblog Entry"
+msgstr ""
+
+msgid "Weblog"
+msgstr ""
+
+# Workflow states (published is known, so omitting that one)
+msgid "draft"
+msgstr ""
+
+# Workflow transitions (publish is known, so omiting that one)
+msgid "Revert to Draft"
+msgstr ""
+
+msgid "publish_in_place"
+msgstr ""
+
+# Content tabs
+msgid "Topics"
+msgstr ""
+
+msgid "Archive"
+msgstr ""
+
+msgid "Drafts"
+msgstr ""
+
+msgid "Comments"
+msgstr ""
+
+msgid "Trackbacks"
+msgstr ""

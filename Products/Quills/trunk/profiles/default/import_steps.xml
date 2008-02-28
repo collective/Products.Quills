@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<import-steps>
+
+ <import-step id="quills-final"
+              version="20070707-01"
+              handler="Products.Quills.setuphandlers.importFinalSteps"
+              title="Final Quills Config">
+  <dependency step="plone-final" />
+    Final Quills configuration
+ </import-step>
+
+</import-steps>

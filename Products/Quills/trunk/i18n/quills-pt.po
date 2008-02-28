@@ -1,0 +1,268 @@
+# Translation of plone-quills.pot to Portuguese
+# thegoldenaura <joao@pyboom.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: Quills 1.5\n"
+"POT-Creation-Date: 2006-06-29 12:25+0000\n"
+"PO-Revision-Date: 2006-08-09 23:18+0100\n"
+"Last-Translator: thegoldenaura <joao@pyboom.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language-Code: pt\n"
+"Language-Name: Portuguese\n"
+"Preferred-Encodings: latin1 utf-8\n"
+"Domain: quills\n"
+
+#. Default: "Atom"
+#: skins/Quills/portlet_quills.pt
+msgid "Atom"
+msgstr "Atom"
+
+#. Default: "Atom Enabled"
+#: skins/Quills/portlet_quills.pt
+msgid "Atom Enabled"
+msgstr "Atom Activado"
+
+#. Default: "Atom feed"
+#: skins/Quills/quills_header_macros.pt
+msgid "Atom feed"
+msgstr "Atom feed"
+
+#. Default: "Get Firefox"
+#: skins/Quills/portlet_quills.pt
+msgid "Get Firefox"
+msgstr "Descarregue o Firefox"
+
+#. Default: "Get Firefox - Take Back the Web"
+#: skins/Quills/portlet_quills.pt
+msgid "Get Firefox - Take Back the Web"
+msgstr "Descarregue o Firefox - Take back the web"
+
+#. Default: "Powered by Plone"
+#: skins/Quills/portlet_quills.pt
+msgid "Powered by Plone"
+msgstr "Powered by Plone"
+
+#. Default: "Powered by Quills"
+#: skins/Quills/portlet_quills.pt
+msgid "Powered by Quills"
+msgstr "Powered by Quills"
+
+#. Default: "Quills weblog system for Plone: by Etria"
+#: skins/Quills/portlet_quills.pt
+msgid "Quills weblog system for Plone: by Etria"
+msgstr "Sistema Blog Quills para Plone: por Etria"
+
+#. Default: "RDF"
+#: skins/Quills/portlet_quills.pt
+msgid "RDF"
+msgstr "RDF"
+
+#. Default: "RDF 1.0 feed"
+#: skins/Quills/quills_header_macros.pt
+msgid "RDF 1.0 feed"
+msgstr "RDF 1.0 feed"
+
+#. Default: "RDF 1.1 feed"
+#: skins/Quills/quills_header_macros.pt
+msgid "RDF 1.1 feed"
+msgstr "RDF 1.1 feed"
+
+#. Default: "RSS 2.0"
+#: skins/Quills/portlet_quills.pt
+msgid "RSS 2.0"
+msgstr "RSS 2.0"
+
+#. Default: "RSS 2.0 feed"
+#: skins/Quills/portlet_quills.pt
+#: skins/Quills/quills_header_macros.pt
+msgid "RSS 2.0 feed"
+msgstr "RSS 2.0 feed"
+
+#. Default: "Semantic feed"
+#: skins/Quills/portlet_quills.pt
+msgid "Semantic feed"
+msgstr "Feed semântico"
+
+#. Default: "This Plone site was built using the Plone Content Management System. Click for more information."
+#: skins/Quills/portlet_quills.pt
+msgid "This Plone site was built using the Plone Content Management System. Click for more information."
+msgstr "Este site foi desenvolvido utilizando o Sistema de Gestão de Conteúdos Plone. Pressione para mais informações."
+
+#. Default: "Recent Comments"
+#: skins/Quills/portlet_recent_comments.pt
+msgid "box_recent_comments"
+msgstr "Comentários Recentes"
+
+#. Default: "No comments posted yet."
+#: skins/Quills/portlet_recent_comments.pt
+msgid "box_recent_no_comments"
+msgstr "Nenhum comentário adicionado"
+
+#. Default: "No items changed yet."
+#: skins/Quills/portlet_recent_posts.pt
+msgid "box_recent_no_items"
+msgstr "Nenhum item alterado"
+
+#. Default: "Recent Posts"
+#: skins/Quills/portlet_recent_posts.pt
+msgid "box_recent_posts"
+msgstr "Entradas Recentes"
+
+#. Default: "Entries For:"
+#: skins/Quills/weblogarchive_view.pt
+msgid "entries_for"
+msgstr "Entradas de:"
+
+#. Default: "Filed Under:"
+#: skins/Quills/entry_macros.pt
+msgid "filed_under"
+msgstr "Catalogado sob:"
+
+#. Default: "Archives"
+#: skins/Quills/portlet_archives.pt
+msgid "heading_archives"
+msgstr "Arquivos"
+
+#. Default: "Tag cloud"
+#: skins/Quills/tag_cloud.pt
+msgid "heading_tagcloud"
+msgstr "Tags"
+
+#. Default: "Topics"
+#: skins/Quills/portlet_topics.pt
+msgid "heading_topics"
+msgstr "Tópicos"
+
+#. Default: "Trackback"
+#: skins/Quills/entry_macros.pt
+msgid "heading_trackback"
+msgstr "Trackback"
+
+#. Default: "Weblog Authors"
+#: browser/author_listing.pt
+msgid "heading_weblog_topics"
+msgstr "Autores do Blog"
+
+#. Default: "A brief introduction for this entry."
+msgid "help_description"
+msgstr "Uma curta introdução para esta entrada."
+
+#. Default: "Select the number of weblog entries you would like to display on the front page and any other batched pages."
+msgid "help_entries_per_page"
+msgstr "Seleccione o número de entradas que pretende visualizar em simultâneo."
+
+#. Default: "Select the number of entries you would like to display in the various Quills portlets."
+msgid "help_entries_per_portlet"
+msgstr "Seleccione o número de entradas que pretende visualizar nos portlets do Quills"
+
+#. Default: "When enabled, entries will be grouped under a header showing the date. Otherwise, the entries will be just be shown underneath eachother."
+msgid "help_group_by_dates"
+msgstr "Quando seleccionado, as entradas serão agrupadas com um cabeçalho com a respectiva data."
+
+#. Default: "When enabled, show only the title and excerpt in the main weblog view.  If an entry has no excerpt, only its title will be displayed."
+msgid "help_only_excerpt_in_weblog_view"
+msgstr "Quando seleccionado, apenas o título e excerto serão visualizados na página principal do blog. No caso de não existir excerto, simplesmente se visualizará o título."
+
+#. Default: "This controls the display of topic images in the weblog view."
+msgid "help_show_topic_images_in_weblog_view"
+msgstr "Controlo da visualização de imagens dos tópicos no blog."
+
+#. Default: "This controls wether trackback are enabled in the weblog"
+msgid "help_trackback_enabled"
+msgstr "Controlo de trackbacks no blog."
+
+#. Default: "A brief description of this weblog.  This text will  be displayed at the top of the page before any weblog entries."
+msgid "help_weblog_description"
+msgstr "Uma curta descrição do blog. Este texto será visualizado no topo do blog."
+
+#. Default: "Excerpt"
+msgid "label_description"
+msgstr "Excerto"
+
+#. Default: "Drafts:"
+#: browser/topic_listing.pt
+msgid "label_drafts"
+msgstr "Rascunhos"
+
+#. Default: "Entries Per Page"
+msgid "label_entries_per_page"
+msgstr "Entradas por Página"
+
+#. Default: "Entries Per Portlet"
+msgid "label_entries_per_portlet"
+msgstr "Entradas por Portlet"
+
+#. Default: "Group entries by date in overviews?"
+msgid "label_group_by_dates"
+msgstr "Agrupar entradas por data na página principal do blog?"
+
+#. Default: "Only show excerpts in overviews?"
+msgid "label_only_excerpt_in_weblog_view"
+msgstr "Visualizar apenas o título e excerto das entradas no página principal do blog?"
+
+#. Default: "Last Post:"
+#: browser/topic_listing.pt
+msgid "label_last_post"
+msgstr "Última Entrada:"
+
+#. Default: "No Posts"
+#: browser/topic_listing.pt
+msgid "label_no_posts"
+msgstr "Não há Entradas"
+
+#. Default: "Published:"
+#: browser/topic_listing.pt
+msgid "label_published"
+msgstr "Publicados:"
+
+#. Default: "Show Topic Images In Weblog View?"
+msgid "label_show_topic_images_in_weblog_view"
+msgstr "Visualizar imagens dos tópicos na página principal do blog?"
+
+#. Default: "Entry Text"
+msgid "label_text"
+msgstr "Texto da Entrada"
+
+#. Default: "Enable the receiving of trackback pings"
+msgid "label_trackback_enabled"
+msgstr "Activar a recepção de trackback pings"
+
+#. Default: "Description"
+msgid "label_weblog_description"
+msgstr "Descrição"
+
+#. Default: "No weblog entries have been posted."
+#: skins/Quills/siteplanet_view.pt
+#: skins/Quills/weblog_macros.pt
+msgid "no_weblog_entries"
+msgstr "Nenhuma entrada adicionada"
+
+#. Default: "Comments:"
+#: skins/Quills/entry_macros.pt
+msgid "number_of_comments"
+msgstr "Comentários:"
+
+#. Default: "read more..."
+#: skins/Quills/entry_macros.pt
+msgid "read_more"
+msgstr "ler mais..."
+
+#. Default: "Topics in Detail"
+#: skins/Quills/portlet_topics.pt
+msgid "topic_detail"
+msgstr "Tópicos em Detalhe"
+
+#. Default: "The URI to TrackBack this entry is:"
+#: skins/Quills/entry_macros.pt
+msgid "trackback_uri"
+msgstr "A URI para Trackback desta entrada é:"
+
+#. Default: "Note: for some weblog editors you will need to provide the following string as id to edit this blog:"
+#: skins/Quills/weblog_view.pt
+msgid "weblog_edit_app_note"
+msgstr "Nota: para alguns blogeditors esta id é necessária para para editar o blog"
+

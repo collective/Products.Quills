@@ -1,0 +1,60 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:browser="http://namespaces.zope.org/browser"
+           xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+           xmlns:five="http://namespaces.zope.org/five"
+           i18n_domain="quills">
+
+  <class class=".Weblog.Weblog">
+    <implements interface="plone.portlets.interfaces.ILocalPortletAssignable" />
+  </class>
+
+  <adapter
+      for="quills.core.interfaces.IWeblogEntry
+           plone.portlets.interfaces.IPortletManager"
+      provides="plone.portlets.interfaces.IPortletRetriever"
+      factory="quills.app.portlets.utils.AcquiringWeblogPortletRetriever"
+      />
+
+  <adapter
+      for="quills.core.interfaces.ITopic
+           plone.portlets.interfaces.IPortletManager"
+      provides="plone.portlets.interfaces.IPortletRetriever"
+      factory="quills.app.portlets.utils.AcquiringWeblogPortletRetriever"
+      />
+
+  <adapter
+      for="quills.core.interfaces.IAuthorTopic
+           plone.portlets.interfaces.IPortletManager"
+      provides="plone.portlets.interfaces.IPortletRetriever"
+      factory="quills.app.portlets.utils.AcquiringWeblogPortletRetriever"
+      />
+
+  <adapter
+      for="quills.app.interfaces.ITransientTopicContainer
+           plone.portlets.interfaces.IPortletManager"
+      provides="plone.portlets.interfaces.IPortletRetriever"
+      factory="quills.app.portlets.utils.AcquiringWeblogPortletRetriever"
+      />
+
+  <adapter
+      for="quills.app.interfaces.ITransientAuthorContainer
+           plone.portlets.interfaces.IPortletManager"
+      provides="plone.portlets.interfaces.IPortletRetriever"
+      factory="quills.app.portlets.utils.AcquiringWeblogPortletRetriever"
+      />
+
+  <adapter
+      for="quills.core.interfaces.IWeblogArchiveContainer
+           plone.portlets.interfaces.IPortletManager"
+      provides="plone.portlets.interfaces.IPortletRetriever"
+      factory="quills.app.portlets.utils.AcquiringWeblogPortletRetriever"
+      />
+
+  <adapter
+      for="quills.app.interfaces.ITransientArchive
+           plone.portlets.interfaces.IPortletManager"
+      provides="plone.portlets.interfaces.IPortletRetriever"
+      factory="quills.app.portlets.utils.AcquiringWeblogPortletRetriever"
+      />
+
+</configure>

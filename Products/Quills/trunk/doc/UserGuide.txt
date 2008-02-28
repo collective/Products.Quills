@@ -1,0 +1,76 @@
+User Guide
+==========
+
+Installation
+------------
+
+As with other Plone products. Install the Quills product and its dependencies (listed in the README.txt file in the Quills directory) into the Products directory of your Zope instance. Then use Plone's Add/Remove products form or the Zope quickinstaller to install.
+
+User Roles
+----------
+
+As of versions after 1.5, with Quills works with the standard Plone user roles.  Users that should have the ability to author weblog entries should be given the 'Contributor' role within the relevant weblog instance.  Users that should be able to publish entries should be given the 'Reviewer' role.  Of course, one user can hold both of these roles and therefore be able to write and then publish their entries.
+
+Creating a Weblog
+-----------------
+
+Login, navigate to the location where you want the Weblog,
+then click the *add to folder* dropdown in the view tab and select
+*weblog*.
+
+Enter a description.
+
+Creating an Entry
+-----------------
+
+Navigate to the Weblog. In the view tab, click *add item*, select *weblog entry* and complete the form that is displayed. See the next section on Categories.
+
+Categorizing content
+--------------------
+
+When creating a WeblogEntry, add New Keywords or select Existing Keywords as necessary. These keywords are used in building Category views (previously also called Topics), and also in the Tag Cloud porlets.
+
+Tag Cloud Portlets
+------------------
+
+The Tag Cloud portlets display the Keywords attached to *published* entries,
+such that the more frequently used keywords will be larger than less
+frequently used keywords. 
+
+portlet_tag_cloud.py displays only within the hierarchy under a weblog.
+portlet_tag_clouds.py may be applied anywhere and shows the cloud for each
+blog in the portal. If multiple blogs will be listed, the title of the blog
+is added under the words *tag Cloud*.
+
+Tag Cloud Styles
+----------------
+
+Change the tag cloud styles in Quills.css as desired.
+
+If you are using portlet_tag_clouds.py, you may duplicate the block of tag styles and qualify them with the blog id selector ".wid_<blogid>", to allow different cloud styles per blog. For example...
+.
+.
+/* default blog cloud styles for all blogs */
+.tagRank_0{ font-size: 100% }
+.tagRank_1{ font-size: 115% }
+.tagRank_2{ font-size: 130% }
+...
+
+/* additional blog cloud styles for the blog at mysite/myblog */
+.wid_myblog .tagRank_0{ color: red; font-size: 100% }
+.wid_myblog .tagRank_1{ color: #00FF00; font-size: 115% }
+.wid_myblog .tagRank_2{ color: blue; font-size: 130% }
+...
+
+Syndication Feeds
+-----------------
+
+It is possible to generate feeds on a per topic and a per author basis.  They should be constructed in the following form:
+
+$blog/topics/$topic/@@atom.xml
+$blog/topics/$topic1/$topic2/@@atom.xml
+$blog/authors/$author/@@atom.xml
+
+The first example above would generate an Atom feed of (recent) weblog entries that have been tagged with the value of $topic.  The second example would provide a feed of entries that have been tagged with the values of *both* $topic1 and $topic2.
+
+The "@@" in the final URL segment is necessary to indicate that it denotes a view name as opposed to another topic id.

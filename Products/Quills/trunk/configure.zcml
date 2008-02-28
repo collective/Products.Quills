@@ -1,0 +1,30 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:browser="http://namespaces.zope.org/browser"
+           xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+           xmlns:five="http://namespaces.zope.org/five"
+           i18n_domain="quills">
+
+  <include package="quills.app" />
+  <include package=".browser" />
+  <include file="syndication.zcml" />
+  <include file="portlets.zcml" />
+
+  <browser:page
+      name="plone_context_state"
+      for="quills.core.interfaces.IWeblogEntry"
+      permission="zope2.View"
+      class="quills.app.contextstate.QuillsContextState"
+      allowed_interface="plone.app.layout.globals.interfaces.IContextState"
+      />
+
+  <!-- profiles -->
+  <genericsetup:registerProfile
+      name="default"
+      title="Products.Quills"
+      directory="profiles/default"
+      description="Extension profile for the Quills product."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      />
+
+</configure>
