@@ -1,0 +1,9 @@
+Changelog for Products.Quills
+
+    (name of developer listed in brackets)
+
+Products.Quills - svn/1.6-dev Unreleased
+
+    - Initial package structure.
+      [zopeskel]
+
