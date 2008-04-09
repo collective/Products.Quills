@@ -29,10 +29,10 @@ class TestWeblog(QuillsTestCase):
                                   id="Keyword1",
                                   title="Folder or Keyword1")
 
-    def testInitializeArchetype(self):
+    def testTopicImageFolderCreation(self):
         # Test the CREATE_TOPIC_IMAGES_FOLDERS toggle
-        self.failUnless( hasattr(self.weblog, 'topic_images') )
         from Products.Quills import config
+        self.failUnless( hasattr(self.weblog, config.TOPIC_IMAGE_FOLDER_ID) )
         config.CREATE_TOPIC_IMAGES_FOLDERS = False
         self.folder.invokeFactory("Weblog", id="weblog2", title="Test Weblog2")
         weblog2 = getattr(self.folder, "weblog2")
@@ -40,6 +40,18 @@ class TestWeblog(QuillsTestCase):
         self.failIf( hasattr(weblog2, 'topic_images') )
         # Clean up after ourselves, just in case...
         config.CREATE_TOPIC_IMAGES_FOLDERS = True
+
+    def testUploadFolderCreation(self):
+        # Test the CREATE_UPLOAD_FOLDERS toggle
+        from Products.Quills import config
+        self.failUnless( hasattr(self.weblog, config.UPLOAD_FOLDER_ID) )
+        config.CREATE_UPLOAD_FOLDERS = False
+        self.folder.invokeFactory("Weblog", id="weblog2", title="Test Weblog2")
+        weblog2 = getattr(self.folder, "weblog2")
+        weblog2.processForm()
+        self.failIf( hasattr(weblog2, 'uploads') )
+        # Clean up after ourselves, just in case...
+        config.CREATE_UPLOAD_FOLDERS = True
 
     def testGetTopics(self):
         self.failUnless(len(self.weblog.getTopics()) == 2)

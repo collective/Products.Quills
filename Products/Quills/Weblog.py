@@ -124,8 +124,15 @@ class Weblog(WeblogMixin, BaseFolder):
         if config.CREATE_TOPIC_IMAGES_FOLDERS and not has_topic_images:
             _createObjectByType('Folder',
                                 self,
-                                'topic_images',
+                                config.TOPIC_IMAGE_FOLDER_ID,
                                 title='Topic Images')
+        has_uploads = hasattr(aq_base(self.aq_inner), 'uploads')
+        # Create folder to store topic images
+        if config.CREATE_UPLOAD_FOLDERS and not has_uploads:
+            _createObjectByType('Folder',
+                                self,
+                                config.UPLOAD_FOLDER_ID,
+                                title='Uploads')
 
     security.declareProtected(perms.View, 'getTopics')
     def getTopics(self):
@@ -158,6 +165,28 @@ class Weblog(WeblogMixin, BaseFolder):
         # directly in the context of this IWeblog.
         years = arch_container._getEntryYears()
         return [YearArchive(year).__of__(self) for year in years]
+
+    security.declareProtected(perms.View, 'getEntry')
+    def getEntry(self, id):
+        """See IWeblog.
+        """
+        catalog = getToolByName(self, 'portal_catalog')
+        catalog._catalog.useBrains(WeblogEntryCatalogBrain)
+        path = '/'.join(self.getPhysicalPath())
+        results = catalog(
+                meta_type=['WeblogEntry',],
+                path={'query':path, 'level': 0},
+                getId=id,)
+        if results:
+            return results[0]
+        # To be clear...
+        return None
+
+    security.declareProtected(perms.View, 'hasEntry')
+    def hasEntry(self, id):
+        """See IWeblog.
+        """
+        return self.getEntry(id) and True or False
 
     security.declareProtected(perms.View, 'getEntries')
     def getEntries(self, maximum=None, offset=0):
@@ -238,6 +267,22 @@ class Weblog(WeblogMixin, BaseFolder):
             entry.setPublicationDate(pubdate)
         entry.reindexObject()
         return entry
+
+    security.declareProtected(perms.AddContent, 'addFile')
+    def addFile(self, content, mimetype, id=None, title=''):
+        """See IWeblog.
+        """
+        if self.hasObject(config.UPLOAD_FOLDER_ID):
+            upload_folder = getattr(self, config.UPLOAD_FOLDER_ID)
+        else:
+            upload_folder = self
+        id = self._genUniqueId(folder=upload_folder, id=id, title=title)
+        portal_type = self._getPortalTypeForMimeType(mimetype)
+        upload_folder.invokeFactory(id=id,
+                                    type_name=portal_type,
+                                    title=title,
+                                    file=content)
+        return getattr(upload_folder, id)
 
     security.declareProtected(perms.DeleteContent, 'deleteEntry')
     def deleteEntry(self, entry_id):

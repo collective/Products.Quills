@@ -28,3 +28,6 @@ GS_DEPENDENCIES = ('quills.app:default',
 # Toggle to determine whether a 'topic_images' folder should be created
 # automatically in each new Weblog instance.
 CREATE_TOPIC_IMAGES_FOLDERS = True
+TOPIC_IMAGE_FOLDER_ID = 'topic_images'
+CREATE_UPLOAD_FOLDERS = True
+UPLOAD_FOLDER_ID = 'uploads'

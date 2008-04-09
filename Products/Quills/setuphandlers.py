@@ -12,8 +12,8 @@ from plone.portlets.interfaces import IPortletManager
 from plone.app.portlets.storage import PortletAssignmentMapping
 
 # Quills imports
-from quills.app.portlets import tagcloud, weblogadmin, authors, recententries, quillslinks, \
-    recentcomments, archive
+from quills.app.setuphandlers import setup_gs_profiles
+from quills.app.setuphandlers import weblogPortletSetup
 
 # Local imports
 import config
@@ -36,23 +36,12 @@ def importFinalSteps(context):
         quickinstaller.installProduct(dependency)
         commit()
 
-    setup_gs_profiles(portal, out)
+    setup_gs_profiles(portal, config.GS_DEPENDENCIES, out)
     automigrate(portal, out)
-    updateSchemas(portal, out) 
+    updateSchemas(portal, out)
     weblogPortletSetup(portal, out)
     print >> out, u"Successfully installed %s." % config.PROJECTNAME
     return out.getvalue()
-
-
-def setup_gs_profiles(portal, out):
-    setup_tool = getToolByName(portal, 'portal_setup')
-    for extension_id in config.GS_DEPENDENCIES:
-        try:
-            setup_tool.runAllImportStepsFromProfile('profile-%s' % extension_id)
-        except Exception, e:
-            print >> out, "Error while trying to GS import %s (%s, %s)" \
-                          % (extension_id, repr(e), str(e))
-            raise
 
 
 def automigrate(self, out):
@@ -83,35 +72,18 @@ def updateSchemas(self, out):
     at.manage_updateSchema(update_all=1, REQUEST=dummyRequest)
 
 
-DEFAULT_LEFT_PORTLETS = (
-    ('tagcloud', tagcloud.Assignment, {}),
-    ('archive', archive.Assignment, {}),
-    ('quillslinks', quillslinks.Assignment, {}),
-    )
-DEFAULT_RIGHT_PORTLETS = (
-    ('weblogadmin', weblogadmin.Assignment, {}),
-    ('recententries', recententries.Assignment, {}),
-    ('recentcomments', recentcomments.Assignment, {}),
-    ('authors', authors.Assignment, {}),
-    )
-
-def weblogPortletSetup(portal, out):
-    left_column = getUtility(IPortletManager, name="plone.leftcolumn")
-    left_category = left_column[CONTENT_TYPE_CATEGORY]
-    right_column = getUtility(IPortletManager, name="plone.rightcolumn")
-    right_category = right_column[CONTENT_TYPE_CATEGORY]
-    left_portlets = left_category.get('Weblog', None)
-    right_portlets = right_category.get('Weblog', None)
-    # It may be that it hasn't been created yet, so just to be safe:
-    if left_portlets is None:
-        left_category['Weblog'] = PortletAssignmentMapping()
-        left_portlets = left_category['Weblog']
-    if right_portlets is None:
-        right_category['Weblog'] = PortletAssignmentMapping()
-        right_portlets = right_category['Weblog']
-    for name, assignment, kwargs in DEFAULT_LEFT_PORTLETS:
-        if not left_portlets.has_key(name):
-            left_portlets[name] = assignment(**kwargs)
-    for name, assignment, kwargs in DEFAULT_RIGHT_PORTLETS:
-        if not right_portlets.has_key(name):
-            right_portlets[name] = assignment(**kwargs)
+def updateDefaultPageTypes(portal, out):
+    """Allow a Weblog to be used on the front page of the site.
+    """
+    ptool = getToolByName(portal, 'portal_properties')
+    default_page_types = ptool.site_properties.getProperty('default_page_types')
+    # make it mutable
+    default_page_types = list(default_page_types)
+    if 'Weblog' not in default_page_types:
+        default_page_types.append('Weblog')
+        ptool.site_properties._updateProperty('default_page_types',
+                                              default_page_types)
+        msg = u"'Weblog' added to the list of default_page_types."
+    else:
+        msg = u"'Weblog' already in the list of default_page_types."
+    print >> out, msg

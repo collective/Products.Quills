@@ -7,7 +7,10 @@
   <include package="quills.app" />
   <include package=".browser" />
   <include file="syndication.zcml" />
-  <include file="portlets.zcml" />
+
+  <class class=".Weblog.Weblog">
+    <implements interface="plone.portlets.interfaces.ILocalPortletAssignable" />
+  </class>
 
   <browser:page
       name="plone_context_state"
@@ -15,6 +18,18 @@
       permission="zope2.View"
       class="quills.app.contextstate.QuillsContextState"
       allowed_interface="plone.app.layout.globals.interfaces.IContextState"
+      />
+
+  <adapter
+      for="quills.core.interfaces.IWeblogEntry"
+      provides="quills.core.interfaces.IWeblogLocator"
+      factory="quills.app.locator.RecursingUpLocator"
+      />
+
+  <adapter
+      for="quills.core.interfaces.IWeblog"
+      provides="quills.core.interfaces.IWeblogLocator"
+      factory="quills.app.locator.SelfLocator"
       />
 
   <!-- profiles -->
