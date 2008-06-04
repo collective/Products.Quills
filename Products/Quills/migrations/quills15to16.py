@@ -4,6 +4,7 @@
 # CMF imports
 from Products.CMFCore.utils import getToolByName
 
+
 class Migration(object):
     """Migrate from 1.5 to 1.6
     """
@@ -39,6 +40,7 @@ class Migration(object):
         self.removeRemoteBloggingAttributes(weblog)
         self.migrateWeblogViewConfiguration(weblog)
         self.movePostsToWeblogRoot(weblog)
+        self.fixUpWorkflows(weblog)
 
     def migrateWeblogViewConfiguration(self, weblog):
         # Use direct attribute access to get hold of previously defined AT
@@ -46,13 +48,38 @@ class Migration(object):
         # IWeblogViewConfiguration
         pass
 
-    def fixUpWorkflows(self):
-        pass
+    def fixUpWorkflows(self, weblog):
+        """Entries used to use the 'quills_workflow'. This no longer exists so
+        after migration, the workflow state for entries reverts to the default
+        of the default workflow. This causes all entries to appear to be
+        'private' when we actually want those that were 'published' before to be
+        'published' still...
+        """
+        weblog_path = '/'.join(weblog.getPhysicalPath())
+        entries = self.catalog(path={ 'query' : weblog_path,
+                                      'depth' : 1 },
+                               portal_type='WeblogEntry')
+        wf_tool = getToolByName(weblog, 'portal_workflow')
+        for brain in entries:
+            entry = brain.getObject()
+            # Get the hold workflow state. Need to use a slightly different api
+            # as the old workflow object is no longer around.
+            old_state = wf_tool.getStatusOf(wf_id='quills_workflow', ob=entry)
+            old_state = old_state['review_state']
+            # Get the current workflow state so we can be sure not to try to do
+            # this migration more than once for an entry.
+            cur_state = wf_tool.getInfoFor(entry, name='review_state')
+            # If it is 'published', publish the entry in its new wf.
+            if old_state == 'published' and cur_state != 'published':
+                wf_tool.doActionFor(entry, 'publish')
+                msg = u'Republished weblog entry at %s'
+                print >> self.out, msg % '/'.join(entry.getPhysicalPath())
+
 
     def movePostsToWeblogRoot(self, weblog):
-        weblogPath = '/'.join(weblog.getPhysicalPath())
-        archives = self.catalog(path=weblogPath,
-                               portal_type='WeblogArchive')
+        weblog_path = '/'.join(weblog.getPhysicalPath())
+        archives = self.catalog(path=weblog_path,
+                                portal_type='WeblogArchive')
         entriesByPath = {}
         for archive in archives:
             entries = self.catalog(path={ 'query' : archive.getPath(),
@@ -64,7 +91,7 @@ class Migration(object):
         for archive, entries in entriesByPath.items():
             cut = archive.manage_cutObjects(entries)
             weblog.manage_pasteObjects(cut)
-        
+
 
     def removeWeblogAuthorRole(self):
         pass
