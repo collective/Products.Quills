@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quills 1.5\n"
 "POT-Creation-Date: 2006-10-26 15:06+0000\n"
-"PO-Revision-Date: 2006-09-26 17:31-0300\n"
+"PO-Revision-Date: 2008-07-08 17:41-0300\n"
 "Last-Translator: Érico Andrei <erico@simplesconsultoria.com.br>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -97,7 +97,7 @@ msgstr "Este site foi desenvolvido utilizando o Sistema de Gerenciamento de Cont
 #. Default: "Topics"
 #: browser/topic_listing.pt
 msgid "Topics"
-msgstr ""
+msgstr "Tópicos"
 
 #. Default: "Recent Comments"
 #: skins/Quills/portlet_recent_comments.pt
@@ -152,95 +152,95 @@ msgstr "Trackback"
 #. Default: "Weblog Authors"
 #: browser/author_listing.pt
 msgid "heading_weblog_topics"
-msgstr ""
+msgstr "Autores deste blog"
 
 #. Default: "A brief introduction for this entry."
 msgid "help_description"
-msgstr ""
+msgstr "Um breve descritivo desta entrada."
 
 #. Default: "Select the number of weblog entries you would like to display on the front page and any other batched pages."
 msgid "help_entries_per_page"
-msgstr ""
+msgstr "Selecione o número de entradas que você deseja exibir na página principal, e em outras páginas de listagem, deste blog."
 
 #. Default: "Select the number of entries you would like to display in the various Quills portlets."
 msgid "help_entries_per_portlet"
-msgstr ""
+msgstr "Selecione o número de entradas que você deseja exibir nos portlets deste blog."
 
 #. Default: "When enabled, entries will be grouped under a header showing the date. Otherwise, the entries will be just be shown underneath eachother."
 msgid "help_group_by_dates"
-msgstr ""
+msgstr "Quando habilitado, as entradas será agrupadas abaixo de um título exibindo a data. Caso contrário, as entradas serão exibidas como uma listagem."
 
 #. Default: "When enabled, show only the title and excerpt in the main weblog view.  If an entry has no excerpt, only its title will be displayed."
 msgid "help_only_excerpt_in_weblog_view"
-msgstr ""
+msgstr "Quando selecionado as entradas exibirão seus títulos e breve descrição nas páginas de listagem do blog. Se uma entrada não possuir um descritivo será exibido apenas o seu título."
 
 #. Default: "This controls the display of topic images in the weblog view."
 msgid "help_show_topic_images_in_weblog_view"
-msgstr ""
+msgstr "Esta opção contra a exibição das imagens dos tópicos nas  visões relativas a este blog."
 
 #. Default: "This controls wether trackback are enabled in the weblog"
 msgid "help_trackback_enabled"
-msgstr ""
+msgstr "Esta opção controla se o trackback está ou não habilitado para este blog."
 
 #. Default: "A brief description of this weblog.  This text will  be displayed at the top of the page before any weblog entries."
 msgid "help_weblog_description"
-msgstr ""
+msgstr "Uma breve descrição sobre este blog. Este texto será exibido no topo da página antes de qualquer uma das entradas."
 
 #. Default: "Excerpt"
 msgid "label_description"
-msgstr ""
+msgstr "Breve descritivo"
 
 #. Default: "Drafts:"
 #: browser/topic_listing.pt
 msgid "label_drafts"
-msgstr ""
+msgstr "Rascunhos:"
 
 #. Default: "Entries Per Page"
 msgid "label_entries_per_page"
-msgstr ""
+msgstr "Entradas por página"
 
 #. Default: "Entries Per Portlet"
 msgid "label_entries_per_portlet"
-msgstr ""
+msgstr "Entradas por portlet"
 
 #. Default: "Group entries by date in overviews?"
 msgid "label_group_by_dates"
-msgstr ""
+msgstr "Agrupar entradas por data?"
 
 #. Default: "Last Post:"
 #: browser/topic_listing.pt
 msgid "label_last_post"
-msgstr ""
+msgstr "Última postagem"
 
 #. Default: "No Posts"
 #: browser/topic_listing.pt
 msgid "label_no_posts"
-msgstr ""
+msgstr "Nenhuma postagem"
 
 #. Default: "Only show excerpts in overviews?"
 msgid "label_only_excerpt_in_weblog_view"
-msgstr ""
+msgstr "Exibe apenas os breve descritivos"
 
 #. Default: "Published:"
 #: browser/topic_listing.pt
 msgid "label_published"
-msgstr ""
+msgstr "Publicada:"
 
 #. Default: "Show Topic Images In Weblog View?"
 msgid "label_show_topic_images_in_weblog_view"
-msgstr ""
+msgstr "Exibir imagens de tópicos"
 
 #. Default: "Entry Text"
 msgid "label_text"
-msgstr ""
+msgstr "Corpo da entrada"
 
 #. Default: "Enable the receiving of trackback pings"
 msgid "label_trackback_enabled"
-msgstr ""
+msgstr "Habilita o recebimento de trackback"
 
 #. Default: "Description"
 msgid "label_weblog_description"
-msgstr ""
+msgstr "Descrição"
 
 #. Default: "No weblog entries have been posted."
 #: skins/Quills/weblog_macros.pt
