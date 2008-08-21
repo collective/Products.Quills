@@ -15,6 +15,8 @@ from Products.fatsyndication.adapters import BaseFeedEntry
 from Products.basesyndication.interfaces import IFeedSource
 from Products.basesyndication.interfaces import IFeedEntry
 
+# for workflow awareness
+from quills.app.interfaces import IWeblogEnhancedConfiguration
 
 class WeblogFeed(BaseFeed):
     """Adapter from Quills Weblog instances to IFeed
@@ -27,12 +29,13 @@ class WeblogFeed(BaseFeed):
         # Quills has the luxury of being able to compute the effective modification date
         # in a much more efficient manner, i.e. by querying the catalog:
         path = '/'.join(self.context.getPhysicalPath())
+        weblog_config = IWeblogEnhancedConfiguration(self.context)
         results = self.context.portal_catalog(
             meta_type=['WeblogEntry', 'Discussion Item',],
             path={'query':path, 'level': 0},
             sort_on = 'modified',
             sort_order = 'reverse',
-            review_state = 'published')
+            review_state = weblog_config.published_states)
 
         # just like fatsyndication, we return 'now', if there
         # aren't any entries:
@@ -136,12 +139,13 @@ class WeblogEntryFeedEntry(BaseFeedEntry):
         modified = self.context.modified()
 
         path = '/'.join(self.context.getPhysicalPath())
+        weblog_config = IWeblogEnhancedConfiguration(self.context)
         results = self.context.portal_catalog(
             meta_type=['Discussion Item',],
             path={'query':path, 'level': 0},
             sort_on = 'modified',
             sort_order = 'reverse',
-            review_state = 'published')
+            review_state = weblog_config.published_states)
 
         try:
             comment_mod = results[0].getObject().modified()

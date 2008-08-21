@@ -51,7 +51,7 @@ from Products.CMFDynamicViewFTI.interface import ISelectableBrowserDefault
 
 # Quills imports
 from quills.core.interfaces import IWeblog
-from quills.core.interfaces import IWeblogConfiguration
+from quills.app.interfaces import IWeblogEnhancedConfiguration
 from quills.app.topic import TopicContainer
 from quills.app.topic import AuthorContainer
 from quills.app.archive import ArchiveContainer
@@ -152,7 +152,7 @@ class Weblog(WeblogMixin, BaseFolder):
     def getSubArchives(self):
         """See IWeblogArchive.
         """
-        config = IWeblogConfiguration(self)
+        config = IWeblogEnhancedConfiguration(self)
         archive_id = config.archive_format
         arch_container = ArchiveContainer(archive_id).__of__(self)
         if archive_id:
@@ -194,13 +194,15 @@ class Weblog(WeblogMixin, BaseFolder):
         """
         catalog = getToolByName(self, 'portal_catalog')
         catalog._catalog.useBrains(WeblogEntryCatalogBrain)
-        path = '/'.join(self.getPhysicalPath())
+        weblog_config = IWeblogEnhancedConfiguration(self)
         results = catalog(
-                meta_type=['WeblogEntry',],
-                path={'query':path, 'level': 0},
-                sort_on = 'effective',
-                sort_order = 'reverse',
-                review_state = 'published')
+            meta_type=['WeblogEntry',],
+            path={ 'query' : '/'.join(self.getPhysicalPath()),
+                   'level' : 0, },
+            sort_on='effective',
+            sort_order='reverse',
+            review_state={ 'query'    : weblog_config.published_states,
+                           'operator' : 'or'})
         return self._filter(results, maximum, offset)
 
     security.declareProtected(perms.ViewDrafts, 'getAllEntries')
@@ -223,13 +225,14 @@ class Weblog(WeblogMixin, BaseFolder):
         """
         catalog = getToolByName(self, 'portal_catalog')
         catalog._catalog.useBrains(WeblogEntryCatalogBrain)
+        weblog_config = IWeblogEnhancedConfiguration(self)
         path = '/'.join(self.getPhysicalPath())
         results = catalog(
                 meta_type=['WeblogEntry',],
                 path={'query':path, 'level': 0},
                 sort_on = 'effective',
                 sort_order = 'reverse',
-                review_state = 'private')
+                review_state = weblog_config.draft_states)
         return self._filter(results, maximum, offset)
 
     security.declareProtected(perms.View, 'getAuthors')
@@ -301,5 +304,6 @@ class Weblog(WeblogMixin, BaseFolder):
         """See IWeblog.
         """
         return self
+     
 
 registerType(Weblog, config.PROJECTNAME)

@@ -44,11 +44,13 @@ from quills.core.interfaces import IWorkflowedWeblogEntry
 from quills.app.topic import Topic
 from quills.app.topic import AuthorTopic
 from quills.app.utilities import QuillsMixin
+from quills.app.interfaces import IWeblogEnhancedConfiguration
 
 # Local imports
 from config import PROJECTNAME
 import permissions as perms
-
+from Products.CMFPlone.utils import log
+from Products.CMFCore.WorkflowCore import WorkflowException
 
 WeblogEntrySchema = BaseSchema.copy() + Schema((
 
@@ -193,28 +195,48 @@ class WeblogEntry(QuillsMixin, BaseContent):
     def publish(self, pubdate=None):
         """See IWorkflowedWeblogEntry.
         """
-        wf_tool = getToolByName(self, 'portal_workflow')
-        current_state = wf_tool.getInfoFor(self, "review_state")
-        if current_state == "published":
+        if self.isPublished():
             # do nothing if the entry has already been published
             return
         # XXX Need to be able to handle std library datetime objects for pubdate
         if pubdate is None:
             pubdate = DateTime()
         self.setPublicationDate(pubdate)
-        wf_tool.doActionFor(self, 'publish')
+        wf_tool = getToolByName(self, 'portal_workflow')
+        try:
+            wf_tool.doActionFor(self, 'publish')
+        except WorkflowException:
+            state = wf_tool.getInfoFor(self, 'review_state')
+            workflow = wf_tool.getWorkflowsFor(self)[0].id
+            objectPath = "/".join(self.getPhysicalPath())
+            log("WeblogEntry.publish failed, most probable because the current " 
+                "state '%s' of workflow '%s' of entry '%s' does not define a "
+                "transition 'publish'. To solve this either use another workflow, "
+                "adapt the workflow, or restrain from using this method for now. "
+                "Sorry." % (state, workflow, objectPath))
+            raise
         self.reindexObject()
 
     security.declareProtected(perms.EditContent, 'retract')
     def retract(self):
         """See IWorkflowedWeblogEntry.
         """
-        wf_tool = getToolByName(self, 'portal_workflow')
-        current_state = wf_tool.getInfoFor(self, "review_state")
-        if current_state == "private":
+        if not self.isPublished():
             # do nothing if the entry has already been private
             return
-        wf_tool.doActionFor(self, 'retract')
+        wf_tool = getToolByName(self, 'portal_workflow')
+        try:
+            wf_tool.doActionFor(self, 'retract')
+        except WorkflowException:
+            state = wf_tool.getInfoFor(self, 'review_state')
+            workflow = wf_tool.getWorkflowsFor(self)[0].id
+            objectPath = "/".join(self.getPhysicalPath())
+            log("WeblogEntry.retract failed, most probable because the current " 
+                "state '%s' of workflow '%s' of entry '%s' does not define a "
+                "transition 'retract'. To solve this either use another workflow, "
+                "adapt the workflow, or restrain from using this method for now. "
+                "Sorry." % (state, workflow, objectPath))
+            raise
         self.setPublicationDate(None)
         self.reindexObject()
 
@@ -224,9 +246,8 @@ class WeblogEntry(QuillsMixin, BaseContent):
         """
         wf_tool = getToolByName(self, 'portal_workflow')
         review_state = wf_tool.getInfoFor(self, 'review_state')
-        if review_state == 'published':
-            return True
-        return False
+        weblog_config = IWeblogEnhancedConfiguration(self.getWeblog())
+        return review_state in weblog_config.published_states
 
     security.declareProtected(perms.View, 'getWeblogEntryContentObject')
     def getWeblogEntryContentObject(self):
