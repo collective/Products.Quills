@@ -43,7 +43,7 @@ class WeblogFeed(BaseFeed):
             return results[0].getObject().modified()
         except IndexError:
             return DateTime()
-             
+
 
 
 class WeblogFeedSource(BaseFeedSource):
@@ -99,8 +99,11 @@ class WeblogEntryFeedSource(BaseFeedSource):
         """See IFeedSource
         """
         d_tool = getToolByName(self.context, 'portal_discussion')
-        discussion = d_tool.getDiscussionFor(self.context)
-        replies = [IFeedEntry(reply) for reply in discussion.getReplies()]
+        if d_tool.isDiscussionAllowedFor(self.context):
+            discussion = d_tool.getDiscussionFor(self.context)
+            replies = [IFeedEntry(reply) for reply in discussion.getReplies()]
+        else:
+            replies = []
         return [IFeedEntry(self.context)] + replies
 
 

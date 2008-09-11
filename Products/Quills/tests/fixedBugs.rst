@@ -1,7 +1,7 @@
 Quills browser tests
 ====================
 
-Here we check for fixed bugs usins tests, that don't fit into the 'narrative' in the main browser test. First some boilerplate to get our browser up and running:
+Here we check for fixed bugs using tests, that don't fit into the 'narrative' in the main browser test. First some boilerplate to get our browser up and running:
 
     >>> self.setRoles(("Contributor",))
     >>> browser = self.getBrowser(logged_in=True)
@@ -113,3 +113,22 @@ longer the case.
     >>> browser.open('http://nohost/plone/weblog/')
     >>> 'portletWeblogAdmin' in browser.contents
     False
+
+Issue #??? Getting a feed on discussion items causes an exception 
+'DiscussionNotAllowed'to be thrown, when disscussion is not allowed for that entry.
+
+Create an entry and disable discussion.
+
+    >>> nodiscussionentry = self.weblog.addEntry("No discussion here",\
+    ... "Just for testing", "Nothing to see.", ['fishslapping'], id="nodiscussionentry")
+    >>> nodiscussionentry.allowDiscussion(allowDiscussion=False)
+    >>> nodiscussionentry.publish()
+
+Now get a feed to it, in this case a Atom feed and query all entries.
+There should be only one: the entry itself.
+
+    >>> from Products.basesyndication.interfaces import IFeedSource
+    >>> feed = IFeedSource(nodiscussionentry)
+    >>> entries = feed.getFeedEntries()
+    >>> len(entries)
+    1
