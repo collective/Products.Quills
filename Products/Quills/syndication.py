@@ -139,7 +139,7 @@ class WeblogEntryFeedEntry(BaseFeedEntry):
         modified = self.context.modified()
 
         path = '/'.join(self.context.getPhysicalPath())
-        weblog_config = IWeblogEnhancedConfiguration(self.context)
+        weblog_config = IWeblogEnhancedConfiguration(self.context.aq_parent)
         results = self.context.portal_catalog(
             meta_type=['Discussion Item',],
             path={'query':path, 'level': 0},
