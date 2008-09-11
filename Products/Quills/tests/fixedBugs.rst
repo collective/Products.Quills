@@ -114,7 +114,7 @@ longer the case.
     >>> 'portletWeblogAdmin' in browser.contents
     False
 
-Issue #??? Getting a feed on discussion items causes an exception 
+Issue #141 Getting a feed on discussion items causes an exception 
 'DiscussionNotAllowed'to be thrown, when disscussion is not allowed for that entry.
 
 Create an entry and disable discussion.
