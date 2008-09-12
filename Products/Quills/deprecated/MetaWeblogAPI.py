@@ -134,7 +134,7 @@ class MetaWeblogAPI(SimpleItem):
             # item is to be published or not, but the whole dates/archives
             # thing is messy enough that I don't want to mess with it at
             # this stage.
-            entry.setEffectiveDate(effective_date)
+            entry.setPublicationDate(effective_date)
             wf_tool.doActionFor(entry, 'publish_in_place', 'quills_workflow')
         entry.reindexObject()
         #self.plone_log("returning " + entry_uid)
@@ -334,7 +334,7 @@ class MetaWeblogAPI(SimpleItem):
 
         struct = {
             'postid': obj.UID(),
-            'dateCreated': obj.effective().rfc822(),
+            'dateCreated': obj.getPublicationDate().rfc822(),
             'title': obj.Title(),
             'description' : body,
             'categories' : [cat.getId() for cat in obj.getCategories()],

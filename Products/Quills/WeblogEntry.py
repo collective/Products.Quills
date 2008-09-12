@@ -27,6 +27,8 @@ from DateTime.DateTime import DateTime
 
 # Plone imports
 from Products.CMFCore.utils import getToolByName
+from Products.CMFCore.WorkflowCore import WorkflowException
+from Products.CMFPlone.utils import log
 
 # Archetypes imports
 from Products.Archetypes.public import BaseSchema
@@ -49,8 +51,8 @@ from quills.app.interfaces import IWeblogEnhancedConfiguration
 # Local imports
 from config import PROJECTNAME
 import permissions as perms
-from Products.CMFPlone.utils import log
-from Products.CMFCore.WorkflowCore import WorkflowException
+
+from Products.Archetypes.ExtensibleMetadata import FLOOR_DATE
 
 WeblogEntrySchema = BaseSchema.copy() + Schema((
 
@@ -172,19 +174,34 @@ class WeblogEntry(QuillsMixin, BaseContent):
             self.setTopics([])
         self.reindexObject()
 
+    security.declareProtected(perms.View, 'effective')
+    def effective(self):
+        """Answer the date this entry became visible (published), or the
+           creation date if the former is not defined.
+
+           This is essentially a hotfix because Quills expects the effective
+           date always to be defined, which is not the case (see Quills
+           issue #126). 
+           
+           This is what fatsyndication feedentry does also. But here we are
+           not redefining getEffectiveDate because "effective" will be used
+           for cataloging.
+        """
+        return self.getField('effectiveDate').get(self) or self.created()
+
     security.declareProtected(perms.View, 'getPublicationDate')
     def getPublicationDate(self):
         """See IWeblogEntry.
         """
         return self.getEffectiveDate()
-        
+
     security.declareProtected(perms.View, 'getMimeType')
     def getMimeType(self):
         """See IWeblogEntry.
         """
         # (ATCT handles the mechanics for determining the default for us)
         return self.text.getContentType()
-        
+
     security.declareProtected(perms.EditContent, 'setPublicationDate')
     def setPublicationDate(self, datetime):
         """See IWeblogEntry.
