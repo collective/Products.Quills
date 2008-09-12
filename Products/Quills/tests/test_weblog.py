@@ -6,6 +6,7 @@ $Id$
 #if __name__ == "__main__":
 #    execfile(os.path.join(sys.path[0], "framework.py"))
 
+from Products.CMFCore.utils import getToolByName
 from base import QuillsTestCase
 
 class TestWeblog(QuillsTestCase):
@@ -73,6 +74,61 @@ class TestWeblog(QuillsTestCase):
     def testInterface(self):
         from quills.core.interfaces import IWeblog
         self.failUnless(IWeblog.providedBy(self.weblog))
+
+    def _viewSortWeblogEntriesToDates(self):
+        """Helper calling setWeblogEntriesToDates of the weblog view."""
+        from Products.CMFPlone import Batch
+        from zope.component import getMultiAdapter
+        entries = self.weblog.getEntries()
+        batch = Batch(entries, 10, 0, orphan=1)
+        view = getMultiAdapter((self.weblog,  self.app.REQUEST),
+                               name='weblog_view')
+        return view.sortWeblogEntriesToDates(batch);
+
+    def testOneStateWorkflowBug(self):
+        """Test for issue #126: Entries without effective date break the blog.
+
+           The most prominent case in which this happens is when using the
+           one_state_workflow, because the effective date gets set through
+           the web when the first workflow state change is triggered; which
+           never happens for this workflow.
+        """
+        # Set the one_state_workflow for weblog entries
+        wtool = getToolByName(self.getPortal(), 'portal_workflow')
+        if not 'one_state_workflow' in wtool.listWorkflows():
+            return
+        org_entry_wf = wtool.getChainForPortalType('Weblog Entry')
+        wtool.setChainForPortalTypes(('WeblogEntry',),('one_state_workflow',))
+        self.assertEqual( wtool.getChainForPortalType('WeblogEntry'),
+                         ('one_state_workflow',) )
+
+        # Add another entry
+        self.weblog.addEntry("No effective Date", "No description", "Nothing")
+        # Update the portal catalog to reflect the new review state.
+        catalog = getToolByName(self.getPortal(), 'portal_catalog')
+        catalog.clearFindAndRebuild()
+
+        self.assert_(self._viewSortWeblogEntriesToDates())
+
+        # Undo Workflow changes
+        wtool.setChainForPortalTypes(('Weblog Entry',),org_entry_wf)
+        catalog.clearFindAndRebuild()
+
+    def testNoEffectiveDateBug(self):
+        """Test for issue #126: Entries without effective date break the blog.
+
+           This test-case is more general than testOneStateWorkflowBug above,
+           but less realistic. It unsets the effective date of an entry
+           by force.
+        """
+        entry = self.weblog.addEntry("No effective Date",
+                                     "No description", "Nothing")
+        entry.publish()
+        entry.setEffectiveDate(None)
+        self.assertEqual(entry.getField('effectiveDate').get(entry), None)
+        entry.reindexObject()
+        self.assert_(self._viewSortWeblogEntriesToDates(),)
+
 
 
 def test_suite():
