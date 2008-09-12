@@ -24,7 +24,7 @@ adding content
     >>> browser.getControl('Excerpt').value = "A new entry"
     >>> browser.getControl('Text').value = "This is a new entry."
     >>> browser.getControl(name='allowDiscussion:boolean').value = True
-    >>> browser.getControl(name='subject_existing_keywords:list').value = ["fishslapping",]
+    >>> browser.getControl(name='subject_existing_keywords:default:list').value = "fishslapping"
     >>> browser.getControl('Save').click()
 
 Having filled out the form and saved it we should now be viewing our newly baked
