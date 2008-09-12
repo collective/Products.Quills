@@ -51,6 +51,14 @@ def test_suite():
     )
 
     suite.addTest(ZopeDocFileSuite(
+        'openBugs.rst',
+        package='Products.Quills.tests',
+        test_class=QuillsFunctionalTestCase,
+        optionflags=optionflags,
+        )
+    )
+
+    suite.addTest(ZopeDocFileSuite(
         'tests.txt',
         package='quills.core.tests',
         test_class=QuillsContributorDocTestCase,
