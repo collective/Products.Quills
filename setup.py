@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-version = 'svn/1.6-dev'
+version = '1.7'
 
 setup(name='Products.Quills',
       version=version,
@@ -26,6 +26,9 @@ Quills is an Enterprise Weblog System for the Plone content management system. I
       zip_safe=False,
       install_requires=[
           'setuptools',
+          'quills.app',
+          'Products.basesyndication',
+          'Products.fatsyndication',
           # -*- Extra requirements: -*-
       ],
       entry_points="""
