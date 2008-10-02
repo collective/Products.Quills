@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.5svn\n"
-"POT-Creation-Date: 2006-10-26 15:06+0000\n"
-"PO-Revision-Date: 2006-07-22 13:00 +0600\n"
+"POT-Creation-Date: 2008-10-02 09:56+0000\n"
+"PO-Revision-Date: 2006-09-15 14:40 +0600\n"
 "Last-Translator: Andrey Fedoseev <andrey.fedoseev@gmail.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -14,260 +14,30 @@ msgstr ""
 "Language-Code: ru\n"
 "Language-Name: Russian\n"
 "Preferred-Encodings: utf-8 latin1\n"
-"Domain: quills\n"
+"Domain: plone\n"
 
-#. Default: "Atom"
-#: skins/Quills/portlet_quills.pt
-msgid "Atom"
-msgstr "Atom"
-
-#. Default: "Atom Enabled"
-#: skins/Quills/portlet_quills.pt
-msgid "Atom Enabled"
-msgstr ""
-
-#. Default: "Atom feed"
-#: skins/Quills/quills_header_macros.pt
-msgid "Atom feed"
-msgstr "Поток Atom"
-
-#. Default: "Get Firefox"
-#: skins/Quills/portlet_quills.pt
-msgid "Get Firefox"
-msgstr ""
-
-#. Default: "Get Firefox - Take Back the Web"
-#: skins/Quills/portlet_quills.pt
-msgid "Get Firefox - Take Back the Web"
-msgstr ""
-
-#. Default: "Powered by Plone"
-#: skins/Quills/portlet_quills.pt
-msgid "Powered by Plone"
-msgstr ""
-
-#. Default: "Powered by Quills"
-#: skins/Quills/portlet_quills.pt
-msgid "Powered by Quills"
-msgstr "Использует Quills"
-
-#. Default: "Quills weblog system for Plone: by Etria"
-#: skins/Quills/portlet_quills.pt
-msgid "Quills weblog system for Plone: by Etria"
-msgstr "Quills это движок блога для Plone"
-
-#. Default: "RDF"
-#: skins/Quills/portlet_quills.pt
-msgid "RDF"
-msgstr "RDF"
-
-#. Default: "RDF 1.0 feed"
-#: skins/Quills/quills_header_macros.pt
-msgid "RDF 1.0 feed"
-msgstr "Поток RDF 1.0"
-
-#. Default: "RDF 1.1 feed"
-#: skins/Quills/quills_header_macros.pt
-msgid "RDF 1.1 feed"
-msgstr "Поток RDF 1.1"
-
-#. Default: "RSS 2.0"
-#: skins/Quills/portlet_quills.pt
-msgid "RSS 2.0"
-msgstr "RSS 2.0"
-
-#. Default: "RSS 2.0 feed"
-#: skins/Quills/quills_header_macros.pt
-#: skins/Quills/portlet_quills.pt
-msgid "RSS 2.0 feed"
-msgstr "Поток RSS 2.0"
-
-#. Default: "Semantic feed"
-#: skins/Quills/portlet_quills.pt
-msgid "Semantic feed"
-msgstr ""
-
-#. Default: "This Plone site was built using the Plone Content Management System. Click for more information."
-#: skins/Quills/portlet_quills.pt
-msgid "This Plone site was built using the Plone Content Management System. Click for more information."
-msgstr ""
-
-#. Default: "Topics"
-#: browser/topic_listing.pt
-msgid "Topics"
-msgstr ""
-
-#. Default: "Recent Comments"
-#: skins/Quills/portlet_recent_comments.pt
-msgid "box_recent_comments"
-msgstr "Последние комментарии"
-
-#. Default: "No comments posted yet."
-#: skins/Quills/portlet_recent_comments.pt
-msgid "box_recent_no_comments"
-msgstr "Нет комментариев"
-
-#. Default: "No items changed yet."
-#: skins/Quills/portlet_recent_posts.pt
-msgid "box_recent_no_items"
-msgstr "Нет записей"
-
-#. Default: "Recent Posts"
-#: skins/Quills/portlet_recent_posts.pt
-msgid "box_recent_posts"
-msgstr "Последние записи"
-
-#. Default: "Entries For:"
-#: skins/Quills/weblogarchive_view.pt
-msgid "entries_for"
-msgstr "Записи за:"
-
-#. Default: "Filed Under:"
-#: skins/Quills/entry_macros.pt
-msgid "filed_under"
-msgstr "Темы:"
-
-#. Default: "Archives"
-#: skins/Quills/portlet_archives.pt
-msgid "heading_archives"
-msgstr "Архив"
-
-#. Default: "Tag cloud"
-#: skins/Quills/tag_cloud.pt
-msgid "heading_tagcloud"
-msgstr "Тэги"
-
-#. Default: "Topics"
-#: skins/Quills/portlet_topics.pt
-msgid "heading_topics"
-msgstr "Темы"
-
-#. Default: "Trackback"
-#: skins/Quills/entry_macros.pt
-msgid "heading_trackback"
-msgstr "Трэкбэк"
-
-#. Default: "Weblog Authors"
-#: browser/author_listing.pt
-msgid "heading_weblog_topics"
-msgstr ""
-
-#. Default: "A brief introduction for this entry."
-msgid "help_description"
-msgstr ""
-
-#. Default: "Select the number of weblog entries you would like to display on the front page and any other batched pages."
-msgid "help_entries_per_page"
-msgstr ""
-
-#. Default: "Select the number of entries you would like to display in the various Quills portlets."
-msgid "help_entries_per_portlet"
-msgstr ""
-
-#. Default: "When enabled, entries will be grouped under a header showing the date. Otherwise, the entries will be just be shown underneath eachother."
-msgid "help_group_by_dates"
-msgstr ""
-
-#. Default: "When enabled, show only the title and excerpt in the main weblog view.  If an entry has no excerpt, only its title will be displayed."
-msgid "help_only_excerpt_in_weblog_view"
-msgstr ""
-
-#. Default: "This controls the display of topic images in the weblog view."
-msgid "help_show_topic_images_in_weblog_view"
-msgstr ""
-
-#. Default: "This controls wether trackback are enabled in the weblog"
-msgid "help_trackback_enabled"
-msgstr ""
-
-#. Default: "A brief description of this weblog.  This text will  be displayed at the top of the page before any weblog entries."
+#. Default: "A brief description of this weblog. This text will be displayed at the top of the page before any weblog entries."
+#: ./Weblog.py:87
 msgid "help_weblog_description"
 msgstr ""
 
-#. Default: "Excerpt"
-msgid "label_description"
-msgstr ""
-
-#. Default: "Drafts:"
-#: browser/topic_listing.pt
-msgid "label_drafts"
-msgstr ""
-
-#. Default: "Entries Per Page"
-msgid "label_entries_per_page"
-msgstr ""
-
-#. Default: "Entries Per Portlet"
-msgid "label_entries_per_portlet"
-msgstr ""
-
-#. Default: "Group entries by date in overviews?"
-msgid "label_group_by_dates"
-msgstr ""
-
-#. Default: "Last Post:"
-#: browser/topic_listing.pt
-msgid "label_last_post"
-msgstr ""
-
-#. Default: "No Posts"
-#: browser/topic_listing.pt
-msgid "label_no_posts"
-msgstr ""
-
-#. Default: "Only show excerpts in overviews?"
-msgid "label_only_excerpt_in_weblog_view"
-msgstr ""
-
-#. Default: "Published:"
-#: browser/topic_listing.pt
-msgid "label_published"
-msgstr ""
-
-#. Default: "Show Topic Images In Weblog View?"
-msgid "label_show_topic_images_in_weblog_view"
+#. Default: "A brief introduction for this entry."
+#: ./WeblogEntry.py:65
+msgid "help_weblogentry_description"
 msgstr ""
 
 #. Default: "Entry Text"
+#: ./WeblogEntry.py:73
 msgid "label_text"
 msgstr ""
 
-#. Default: "Enable the receiving of trackback pings"
-msgid "label_trackback_enabled"
-msgstr ""
-
 #. Default: "Description"
+#: ./Weblog.py:86
 msgid "label_weblog_description"
 msgstr ""
 
-#. Default: "No weblog entries have been posted."
-#: skins/Quills/weblog_macros.pt
-#: skins/Quills/siteplanet_view.pt
-msgid "no_weblog_entries"
-msgstr "В блоге нет записей"
-
-#. Default: "Comments:"
-#: skins/Quills/entry_macros.pt
-msgid "number_of_comments"
-msgstr "Комментарии:"
-
-#. Default: "read more..."
-#: skins/Quills/entry_macros.pt
-msgid "read_more"
-msgstr "читать дальше..."
-
-#. Default: "Topics in Detail"
-#: skins/Quills/portlet_topics.pt
-msgid "topic_detail"
-msgstr "Подробнее о темах"
-
-#. Default: "The URI to TrackBack this entry is:"
-#: skins/Quills/entry_macros.pt
-msgid "trackback_uri"
-msgstr "Адрес для отправки трэкбэков:"
-
-#. Default: "Note: for some weblog editors you will need to provide the following string as id to edit this blog:"
-#: skins/Quills/weblog_view.pt
-msgid "weblog_edit_app_note"
-msgstr "Замечание: чтобы работать с блогом из внешних редакторах вам понадобится указать следующую строку в качестве идентификатора:"
+#. Default: "Excerpt"
+#: ./WeblogEntry.py:64
+msgid "label_weblogentry_description"
+msgstr ""
 

@@ -1,12 +1,11 @@
 # Gettext Message File for Quills.
-# This one should include the field titles/descriptions from the .py
-# files. I (reinout) don't know how to generate that automatically
-# except by using archgenxml :-)
+# This one should include the workflow names, content type names and
+# other strangely not i18n-taggable stuff. Empty for now.
 msgid ""
 msgstr ""
 "Project-Id-Version: Quills 1.5\n"
-"POT-Creation-Date: 2006-10-26 15:06+0000\n"
-"PO-Revision-Date: 2006-10-26 17:02+0100\n"
+"POT-Creation-Date: 2008-10-02 09:56+0000\n"
+"PO-Revision-Date: 2006-09-27 08:14+0100\n"
 "Last-Translator: Mikel Larreategi <mlarreategi@codesyntax.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,260 +15,31 @@ msgstr ""
 "Language-Code: eu\n"
 "Language-Name: Basque\n"
 "Preferred-Encodings: latin1 utf-8\n"
-"Domain: quills\n"
+"Domain: plone\n"
 
-#. Default: "Atom"
-#: skins/Quills/portlet_quills.pt
-msgid "Atom"
-msgstr "Atom"
-
-#. Default: "Atom Enabled"
-#: skins/Quills/portlet_quills.pt
-msgid "Atom Enabled"
-msgstr ""
-
-#. Default: "Atom feed"
-#: skins/Quills/quills_header_macros.pt
-msgid "Atom feed"
-msgstr "Atom jarioa"
-
-#. Default: "Get Firefox"
-#: skins/Quills/portlet_quills.pt
-msgid "Get Firefox"
-msgstr "Lortu Firefox"
-
-#. Default: "Get Firefox - Take Back the Web"
-#: skins/Quills/portlet_quills.pt
-msgid "Get Firefox - Take Back the Web"
-msgstr ""
-
-#. Default: "Powered by Plone"
-#: skins/Quills/portlet_quills.pt
-msgid "Powered by Plone"
-msgstr "Plonerekin egina"
-
-#. Default: "Powered by Quills"
-#: skins/Quills/portlet_quills.pt
-msgid "Powered by Quills"
-msgstr "Quillsekin egina"
-
-#. Default: "Quills weblog system for Plone: by Etria"
-#: skins/Quills/portlet_quills.pt
-msgid "Quills weblog system for Plone: by Etria"
-msgstr "Quills, Plonerako blog sistema: Etriak egina"
-
-#. Default: "RDF"
-#: skins/Quills/portlet_quills.pt
-msgid "RDF"
-msgstr "RDF"
-
-#. Default: "RDF 1.0 feed"
-#: skins/Quills/quills_header_macros.pt
-msgid "RDF 1.0 feed"
-msgstr "RDF 1.0 jarioa"
-
-#. Default: "RDF 1.1 feed"
-#: skins/Quills/quills_header_macros.pt
-msgid "RDF 1.1 feed"
-msgstr "RDF 1.1 jarioa"
-
-#. Default: "RSS 2.0"
-#: skins/Quills/portlet_quills.pt
-msgid "RSS 2.0"
-msgstr "RSS 2.0"
-
-#. Default: "RSS 2.0 feed"
-#: skins/Quills/quills_header_macros.pt
-#: skins/Quills/portlet_quills.pt
-msgid "RSS 2.0 feed"
-msgstr "RSS 2.0 jarioa"
-
-#. Default: "Semantic feed"
-#: skins/Quills/portlet_quills.pt
-msgid "Semantic feed"
-msgstr "Jario semantikoa"
-
-#. Default: "This Plone site was built using the Plone Content Management System. Click for more information."
-#: skins/Quills/portlet_quills.pt
-msgid "This Plone site was built using the Plone Content Management System. Click for more information."
-msgstr "Webgune hau Plone Eduki Kudeaketa Sistema erabiliz sortu da. Egin klik informazio gehiago lortzeko."
-
-#. Default: "Topics"
-#: browser/topic_listing.pt
-msgid "Topics"
-msgstr "Gaiak"
-
-#. Default: "Recent Comments"
-#: skins/Quills/portlet_recent_comments.pt
-msgid "box_recent_comments"
-msgstr "Azken erantzunak"
-
-#. Default: "No comments posted yet."
-#: skins/Quills/portlet_recent_comments.pt
-msgid "box_recent_no_comments"
-msgstr "Ez dago erantzunik"
-
-#. Default: "No items changed yet."
-#: skins/Quills/portlet_recent_posts.pt
-msgid "box_recent_no_items"
-msgstr "Ez da elementurik aldatu"
-
-#. Default: "Recent Posts"
-#: skins/Quills/portlet_recent_posts.pt
-msgid "box_recent_posts"
-msgstr "Azken sarrerak"
-
-#. Default: "Entries For:"
-#: skins/Quills/weblogarchive_view.pt
-msgid "entries_for"
-msgstr ""
-
-#. Default: "Filed Under:"
-#: skins/Quills/entry_macros.pt
-msgid "filed_under"
-msgstr "Etiketak:"
-
-#. Default: "Archives"
-#: skins/Quills/portlet_archives.pt
-msgid "heading_archives"
-msgstr "Artxiboa"
-
-#. Default: "Tag cloud"
-#: skins/Quills/tag_cloud.pt
-msgid "heading_tagcloud"
-msgstr "Etiketa lainoa"
-
-#. Default: "Topics"
-#: skins/Quills/portlet_topics.pt
-msgid "heading_topics"
-msgstr "Gaiak"
-
-#. Default: "Trackback"
-#: skins/Quills/entry_macros.pt
-msgid "heading_trackback"
-msgstr "Trackback"
-
-#. Default: "Weblog Authors"
-#: browser/author_listing.pt
-msgid "heading_weblog_topics"
-msgstr "Blogaren egileak"
-
-#. Default: "A brief introduction for this entry."
-msgid "help_description"
-msgstr "Mezuaren sarrera"
-
-#. Default: "Select the number of weblog entries you would like to display on the front page and any other batched pages."
-msgid "help_entries_per_page"
-msgstr "Aukeratu zenbanaka agertuko diren blogeko mezuak portada nagusian edo zatikatutako beste orrialde guztietan"
-
-#. Default: "Select the number of entries you would like to display in the various Quills portlets."
-msgid "help_entries_per_portlet"
-msgstr "Quillsen portletetan zenbat mezu agertuko diren aukeratu"
-
-#. Default: "When enabled, entries will be grouped under a header showing the date. Otherwise, the entries will be just be shown underneath eachother."
-msgid "help_group_by_dates"
-msgstr "Aktibatutakoan, mezuak data baten azpian taldekatuta azalduko dira. Bestela bata bestearen ostean azalduko dira."
-
-#. Default: "When enabled, show only the title and excerpt in the main weblog view.  If an entry has no excerpt, only its title will be displayed."
-msgid "help_only_excerpt_in_weblog_view"
-msgstr "Aukeratuta dagoenean, blogaren bista nagusian izenburua eta sarrera testua bakarrik agertuko dira. Mezuren batekin sarrerarik ez badu izenburua bakarrik erakutsiko da."
-
-#. Default: "This controls the display of topic images in the weblog view."
-msgid "help_show_topic_images_in_weblog_view"
-msgstr "Gaiei dagozkien irudiak agertuko diren ala ez kontrolatzen du honek."
-
-#. Default: "This controls wether trackback are enabled in the weblog"
-msgid "help_trackback_enabled"
-msgstr "Trackbackak gaituta dauden ala ez kontrolatzen da hemendik"
-
-#. Default: "A brief description of this weblog.  This text will  be displayed at the top of the page before any weblog entries."
+#. Default: "A brief description of this weblog. This text will be displayed at the top of the page before any weblog entries."
+#: ./Weblog.py:87
+#, fuzzy
 msgid "help_weblog_description"
 msgstr "Blogaren sarrera laburra. Blogaren orrialde nagusian agertuko da, egon daitekeen edozein mezuren aurretik."
 
-#. Default: "Excerpt"
-msgid "label_description"
-msgstr "Sarrera"
-
-#. Default: "Drafts:"
-#: browser/topic_listing.pt
-msgid "label_drafts"
-msgstr "Zirriborroak:"
-
-#. Default: "Entries Per Page"
-msgid "label_entries_per_page"
-msgstr "Orri baten ikusiko den mezu kopurua"
-
-#. Default: "Entries Per Portlet"
-msgid "label_entries_per_portlet"
-msgstr "Portletean erakutsiko den elementu kopurua"
-
-#. Default: "Group entries by date in overviews?"
-msgid "label_group_by_dates"
-msgstr "Mezuak dataren arabera taldekatu?"
-
-#. Default: "Last Post:"
-#: browser/topic_listing.pt
-msgid "label_last_post"
-msgstr "Azken mezua:"
-
-#. Default: "No Posts"
-#: browser/topic_listing.pt
-msgid "label_no_posts"
-msgstr "Ez dago mezurik"
-
-#. Default: "Only show excerpts in overviews?"
-msgid "label_only_excerpt_in_weblog_view"
-msgstr "Sarrera testuak bakarrik erakutsi?"
-
-#. Default: "Published:"
-#: browser/topic_listing.pt
-msgid "label_published"
-msgstr "Argitaratuta:"
-
-#. Default: "Show Topic Images In Weblog View?"
-msgid "label_show_topic_images_in_weblog_view"
-msgstr "Blogaren bistan gaiei dagozkien irudiak erakutsi?"
+#. Default: "A brief introduction for this entry."
+#: ./WeblogEntry.py:65
+msgid "help_weblogentry_description"
+msgstr ""
 
 #. Default: "Entry Text"
+#: ./WeblogEntry.py:73
 msgid "label_text"
 msgstr "Mezuaren testua"
 
-#. Default: "Enable the receiving of trackback pings"
-msgid "label_trackback_enabled"
-msgstr "Trackbackak aktibatu"
-
 #. Default: "Description"
+#: ./Weblog.py:86
 msgid "label_weblog_description"
 msgstr "Deskribapena"
 
-#. Default: "No weblog entries have been posted."
-#: skins/Quills/weblog_macros.pt
-#: skins/Quills/siteplanet_view.pt
-msgid "no_weblog_entries"
-msgstr "Ez dago sarrerarik"
-
-#. Default: "Comments:"
-#: skins/Quills/entry_macros.pt
-msgid "number_of_comments"
-msgstr "Erantzun kopurua"
-
-#. Default: "read more..."
-#: skins/Quills/entry_macros.pt
-msgid "read_more"
-msgstr "Gehiago irakurri"
-
-#. Default: "Topics in Detail"
-#: skins/Quills/portlet_topics.pt
-msgid "topic_detail"
+#. Default: "Excerpt"
+#: ./WeblogEntry.py:64
+msgid "label_weblogentry_description"
 msgstr ""
-
-#. Default: "The URI to TrackBack this entry is:"
-#: skins/Quills/entry_macros.pt
-msgid "trackback_uri"
-msgstr "Sarrera honen Trackback helbidea:"
-
-#. Default: "Note: for some weblog editors you will need to provide the following string as id to edit this blog:"
-#: skins/Quills/weblog_view.pt
-msgid "weblog_edit_app_note"
-msgstr "Oharra: blog editore batzuekin karaktere zerrenda hau erabili beharko duzu konfigurazioan"
 

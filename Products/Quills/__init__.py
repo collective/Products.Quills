@@ -25,6 +25,9 @@ from Products.Archetypes.public import process_types
 from Products.Archetypes.public import listTypes
 from Products.CMFCore import utils
 
+from zope.i18nmessageid import MessageFactory
+QuillsMessageFactory = MessageFactory('quills')
+
 import config
 from permissions import initialize as initialize_permissions
 

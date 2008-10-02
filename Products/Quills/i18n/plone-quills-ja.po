@@ -17,37 +17,3 @@ msgstr ""
 "Preferred-Encodings: utf-8\n"
 "Domain: plone\n"
 
-msgid "Archive"
-msgstr ""
-
-msgid "Comments"
-msgstr ""
-
-msgid "Drafts"
-msgstr ""
-
-# Workflow transitions (publish is known, so omiting that one)
-msgid "Revert to Draft"
-msgstr "下書きに戻す"
-
-# Content tabs
-msgid "Topics"
-msgstr ""
-
-msgid "Trackbacks"
-msgstr ""
-
-msgid "Weblog"
-msgstr "Weblog"
-
-# Content type names
-msgid "Weblog Entry"
-msgstr "Weblog Entry"
-
-# Workflow states (published is known, so omitting that one)
-msgid "draft"
-msgstr "下書き"
-
-msgid "publish_in_place"
-msgstr "この場で公開する"
-

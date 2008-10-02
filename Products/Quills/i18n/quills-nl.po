@@ -1,273 +1,45 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2006-10-26 15:06+0000\n"
-"PO-Revision-Date: 2006-09-15 13:45+0200\n"
-"Last-Translator: Maurits van Rees <maurits@vanrees.org>\n"
-"Language-Team: Reinout van Rees <reinout@vanrees.org>\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2008-10-02 09:56+0000\n"
+"PO-Revision-Date: 2006-09-15 13:41+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 "Language-Code: nl\n"
 "Language-Name: Dutch\n"
-"Preferred-Encodings: utf-8 latin-1\n"
-"Domain: quills\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: plone\n"
 
-#. Default: "Atom"
-#: skins/Quills/portlet_quills.pt
-msgid "Atom"
-msgstr "Atom"
-
-#. Default: "Atom Enabled"
-#: skins/Quills/portlet_quills.pt
-msgid "Atom Enabled"
-msgstr "Geschikt voor Atom"
-
-#. Default: "Atom feed"
-#: skins/Quills/quills_header_macros.pt
-msgid "Atom feed"
-msgstr "Atom feed"
-
-#. Default: "Get Firefox"
-#: skins/Quills/portlet_quills.pt
-msgid "Get Firefox"
-msgstr "Download Firefox"
-
-#. Default: "Get Firefox - Take Back the Web"
-#: skins/Quills/portlet_quills.pt
-msgid "Get Firefox - Take Back the Web"
-msgstr "Download Firefox - Neem het internet weer over"
-
-#. Default: "Powered by Plone"
-#: skins/Quills/portlet_quills.pt
-msgid "Powered by Plone"
-msgstr "Deze website is gemaakt met Plone"
-
-#. Default: "Powered by Quills"
-#: skins/Quills/portlet_quills.pt
-msgid "Powered by Quills"
-msgstr "Gemaakt met Quills"
-
-#. Default: "Quills weblog system for Plone: by Etria"
-#: skins/Quills/portlet_quills.pt
-msgid "Quills weblog system for Plone: by Etria"
-msgstr "Quills weblog systeem voor Plone"
-
-#. Default: "RDF"
-#: skins/Quills/portlet_quills.pt
-msgid "RDF"
-msgstr "RDF"
-
-#. Default: "RDF 1.0 feed"
-#: skins/Quills/quills_header_macros.pt
-msgid "RDF 1.0 feed"
-msgstr "RDF 1.0 feed"
-
-#. Default: "RDF 1.1 feed"
-#: skins/Quills/quills_header_macros.pt
-msgid "RDF 1.1 feed"
-msgstr "RDF 1.1 feed"
-
-#. Default: "RSS 2.0"
-#: skins/Quills/portlet_quills.pt
-msgid "RSS 2.0"
-msgstr "RSS 2.0"
-
-#. Default: "RSS 2.0 feed"
-#: skins/Quills/quills_header_macros.pt
-#: skins/Quills/portlet_quills.pt
-msgid "RSS 2.0 feed"
-msgstr "RSS 2.0 feed"
-
-#. Default: "Semantic feed"
-#: skins/Quills/portlet_quills.pt
-msgid "Semantic feed"
-msgstr "Semantische feed"
-
-#. Default: "This Plone site was built using the Plone Content Management System. Click for more information."
-#: skins/Quills/portlet_quills.pt
-msgid "This Plone site was built using the Plone Content Management System. Click for more information."
-msgstr "Deze website is gemaakt met Plone CMS, het Open Source Content Management Systeem. Klik voor meer informatie."
-
-#. Default: "Topics"
-#: browser/topic_listing.pt
-msgid "Topics"
-msgstr "Onderwerpen"
-
-#. Default: "Recent Comments"
-#: skins/Quills/portlet_recent_comments.pt
-msgid "box_recent_comments"
-msgstr "Recent commentaar"
-
-#. Default: "No comments posted yet."
-#: skins/Quills/portlet_recent_comments.pt
-msgid "box_recent_no_comments"
-msgstr "Er is nog geen commentaar toegevoegd"
-
-#. Default: "No items changed yet."
-#: skins/Quills/portlet_recent_posts.pt
-msgid "box_recent_no_items"
-msgstr "Er zijn nog geen berichten veranderd"
-
-#. Default: "Recent Posts"
-#: skins/Quills/portlet_recent_posts.pt
-msgid "box_recent_posts"
-msgstr "Recente berichten"
-
-#. Default: "Entries For:"
-#: skins/Quills/weblogarchive_view.pt
-msgid "entries_for"
-msgstr "Berichten voor:"
-
-#. Default: "Filed Under:"
-#: skins/Quills/entry_macros.pt
-msgid "filed_under"
-msgstr "Opgeslagen onder:"
-
-#. Default: "Archives"
-#: skins/Quills/portlet_archives.pt
-msgid "heading_archives"
-msgstr "Archieven"
-
-#. Default: "Tag cloud"
-#: skins/Quills/tag_cloud.pt
-msgid "heading_tagcloud"
-msgstr "Onderwerpwolk"
-
-#. Default: "Topics"
-#: skins/Quills/portlet_topics.pt
-msgid "heading_topics"
-msgstr "Onderwerpen"
-
-#. Default: "Trackback"
-#: skins/Quills/entry_macros.pt
-msgid "heading_trackback"
-msgstr "Trackback"
-
-#. Default: "Weblog Authors"
-#: browser/author_listing.pt
-msgid "heading_weblog_topics"
-msgstr "Weblog auteurs"
-
-#. Default: "A brief introduction for this entry."
-msgid "help_description"
-msgstr "Een korte inleiding voor dit bericht"
-
-#. Default: "Select the number of weblog entries you would like to display on the front page and any other batched pages."
-msgid "help_entries_per_page"
-msgstr "Selecteer het aantal weblogberichten dat je wil laten zien op de voorpagina en andere vervolgpagina's."
-
-#. Default: "Select the number of entries you would like to display in the various Quills portlets."
-msgid "help_entries_per_portlet"
-msgstr "Selecteer het aantal weblogberichten dat je wil laten zien in de diverse portlets van Quills."
-
-#. Default: "When enabled, entries will be grouped under a header showing the date. Otherwise, the entries will be just be shown underneath eachother."
-msgid "help_group_by_dates"
-msgstr "Wanneer ingeschakeld, worden berichten gegroepeerd onder een kop met de datum.  Anders worden berichten gewoon onder elkaar getoond."
-
-#. Default: "When enabled, show only the title and excerpt in the main weblog view.  If an entry has no excerpt, only its title will be displayed."
-msgid "help_only_excerpt_in_weblog_view"
-msgstr "Wanneer ingeschakeld, laat alleen de titel en samenvatting zien op overzichtspagina's van het weblog.  Als een bericht geen samenvatting heeft, wordt alleen de titel getoond."
-
-#. Default: "This controls the display of topic images in the weblog view."
-msgid "help_show_topic_images_in_weblog_view"
-msgstr "Dit regelt het tonen van plaatjes voor onderwerpen in de weblog pagina."
-
-#. Default: "This controls wether trackback pings are enabled in the weblog"
-msgid "help_trackback_enabled"
-msgstr "Dit regelt of trackbacks pings geaccepteerd worden door dit weblog."
-
-#. Default: "A brief description of this weblog.  This text will  be displayed at the top of the page before any weblog entries."
+#. Default: "A brief description of this weblog. This text will be displayed at the top of the page before any weblog entries."
+#: ./Weblog.py:87
+#, fuzzy
 msgid "help_weblog_description"
 msgstr "Een korte omschrijving van dit weblog.  Deze tekst zal worden getoond aan de bovenkant van de pagina voor de weblog berichten."
 
-#. Default: "Excerpt"
-msgid "label_description"
-msgstr "Samenvatting"
-
-#. Default: "Drafts:"
-#: browser/topic_listing.pt
-msgid "label_drafts"
-msgstr "Concepten:"
-
-#. Default: "Entries Per Page"
-msgid "label_entries_per_page"
-msgstr "Berichten per pagina"
-
-#. Default: "Entries Per Portlet"
-msgid "label_entries_per_portlet"
-msgstr "Berichten per portlet"
-
-#. Default: "Group entries by date in overviews?"
-msgid "label_group_by_dates"
-msgstr "Groepeer berichten per datum in overzichten?"
-
-#. Default: "Last Post:"
-#: browser/topic_listing.pt
-msgid "label_last_post"
-msgstr "Meest recente bericht:"
-
-#. Default: "No Posts"
-#: browser/topic_listing.pt
-msgid "label_no_posts"
-msgstr "Geen berichten"
-
-#. Default: "Only show excerpts in overviews?"
-msgid "label_only_excerpt_in_weblog_view"
-msgstr "Laat alleen samenvattingen zien in overzichten?"
-
-#. Default: "Published:"
-#: browser/topic_listing.pt
-msgid "label_published"
-msgstr "Gepubliceerd"
-
-#. Default: "Show Topic Images In Weblog View?"
-msgid "label_show_topic_images_in_weblog_view"
-msgstr "Laat plaatjes van onderwerpen zien in weblog =pagina's?"
+#. Default: "A brief introduction for this entry."
+#: ./WeblogEntry.py:65
+msgid "help_weblogentry_description"
+msgstr ""
 
 #. Default: "Entry Text"
+#: ./WeblogEntry.py:73
 msgid "label_text"
 msgstr "Berichttekst"
 
-#. Default: "Enable the receiving of trackback pings"
-msgid "label_trackback_enabled"
-msgstr "Zet het ontvangen van trackback pings aan"
-
 #. Default: "Description"
+#: ./Weblog.py:86
 msgid "label_weblog_description"
 msgstr "Omschrijving"
 
-#. Default: "No weblog entries have been posted."
-#: skins/Quills/weblog_macros.pt
-#: skins/Quills/siteplanet_view.pt
-msgid "no_weblog_entries"
-msgstr "Er zijn nog geen berichten geplaatst."
-
-#. Default: "Comments:"
-#: skins/Quills/entry_macros.pt
-msgid "number_of_comments"
-msgstr "Commentaren:"
-
-#. Default: "read more..."
-#: skins/Quills/entry_macros.pt
-msgid "read_more"
-msgstr "Lees verder..."
-
-#. Default: "Topics in Detail"
-#: skins/Quills/portlet_topics.pt
-msgid "topic_detail"
-msgstr "Onderwerpen"
-
-#. Default: "The URI to TrackBack this entry is:"
-#: skins/Quills/entry_macros.pt
-msgid "trackback_uri"
-msgstr "De URI om een Trackback naar dit bericht te sturen is:"
-
-#. Default: "Note: for some weblog editors you will need to provide the following string as id to edit this blog:"
-#: skins/Quills/weblog_view.pt
-msgid "weblog_edit_app_note"
+#. Default: "Excerpt"
+#: ./WeblogEntry.py:64
+msgid "label_weblogentry_description"
 msgstr ""
-"Opmerking: bij sommige externe weblog programma's moet je het volgende\n"
-"ID doorgeven om dit weblog te kunnen bewerken:"
 

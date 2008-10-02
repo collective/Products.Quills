@@ -42,6 +42,7 @@ from Products.Archetypes.public import registerType
 from Products.Archetypes.Marshall import RFC822Marshaller
 
 # Quills imports
+from Products.Quills import QuillsMessageFactory as _
 from quills.core.interfaces import IWorkflowedWeblogEntry
 from quills.app.topic import Topic
 from quills.app.topic import AuthorTopic
@@ -57,28 +58,25 @@ from Products.Archetypes.ExtensibleMetadata import FLOOR_DATE
 WeblogEntrySchema = BaseSchema.copy() + Schema((
 
     TextField('description',
-        searchable=1,
-        accessor="Description",
-        widget=TextAreaWidget(
-            label='Excerpt',
-            description="""A brief introduction for this entry.""",
-            label_msgid="label_description",
-            description_msgid="help_description",
-            i18n_domain="quills"),
-        ),
+              searchable=1,
+              accessor='Description',
+              widget=TextAreaWidget(
+                     label=_(u'label_weblogentry_description', default=u'Excerpt'),
+                     description=_(u'help_weblogentry_description', default='A brief introduction for this entry.'),
+                     ),
+              ),
 
     TextField('text',
-        searchable=1,
-        default_output_type='text/x-html-safe',
-        widget=RichWidget(label='Entry Text',
-            rows=30,
-            label_msgid="label_text",
-            i18n_domain="quills"),
-        ),
+              searchable=1,
+              default_output_type='text/x-html-safe',
+              widget=RichWidget(
+                     label=_(u'label_text', default=u'Entry Text'),
+                     rows=30,
+                     ),
+              ),
     ),
-
     marshall=RFC822Marshaller(),
-    )
+)
 
 # Move the subject/topic picking to the main edit view as it should be used
 # for every edit, really.

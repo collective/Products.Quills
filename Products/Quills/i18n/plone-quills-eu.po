@@ -17,37 +17,3 @@ msgstr ""
 "Preferred-Encodings: latin1 utf-8\n"
 "Domain: plone\n"
 
-msgid "Archive"
-msgstr "Artxiboa"
-
-msgid "Comments"
-msgstr "Iruzkinak"
-
-msgid "Drafts"
-msgstr "Zirriborroak"
-
-# Workflow transitions (publish is known, so omiting that one)
-msgid "Revert to Draft"
-msgstr "Zirriborro bihurtu"
-
-# Content tabs
-msgid "Topics"
-msgstr "Gaiak"
-
-msgid "Trackbacks"
-msgstr "Trackbackak"
-
-msgid "Weblog"
-msgstr "Bloga"
-
-# Content type names
-msgid "Weblog Entry"
-msgstr "Blogeko sarrera"
-
-# Workflow states (published is known, so omitting that one)
-msgid "draft"
-msgstr "Zirriborroa"
-
-msgid "publish_in_place"
-msgstr "Hemen argitaratu"
-

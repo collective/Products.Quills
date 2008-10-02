@@ -50,6 +50,7 @@ from Products.CMFDynamicViewFTI.interface import ISelectableBrowserDefault
 # a workaround for https://dev.plone.org/plone/ticket/7226
 
 # Quills imports
+from Products.Quills import QuillsMessageFactory as _
 from quills.core.interfaces import IWeblog
 from quills.app.interfaces import IWeblogEnhancedConfiguration
 from quills.app.topic import TopicContainer
@@ -79,19 +80,17 @@ WeblogSchema = BaseFolderSchema.copy() + Schema((
     # field for our purposes, but then I don't seen any reason to duplicate the
     # information.
     TextField('description',
-        searchable=1,
-        accessor="Description",
-        widget=TextAreaWidget(
-            label='Description',
-            description="""A brief description of this weblog.  This text will
-            be displayed at the top of the page before any weblog entries.""",
-            label_msgid="label_weblog_description",
-            description_msgid="help_weblog_description",
-            i18n_domain="quills"),
-        ),
+              searchable=1,
+              accessor='Description',
+              widget=TextAreaWidget(
+                     label=_(u'label_weblog_description', default=u'Description'),
+                     description=_(u'help_weblog_description', default=u'A brief description of this weblog. This text will be displayed at the top of the page before any weblog entries.'),
+                     ),
+              ),
     ),
     marshall=PrimaryFieldMarshaller(),
     )
+
 # The subject is not language-specific
 WeblogSchema['subject'].languageIndependent = True
 
@@ -120,6 +119,7 @@ class Weblog(WeblogMixin, BaseFolder):
         'Folder' content type for the weblog.
         """
         has_topic_images = hasattr(aq_base(self.aq_inner), 'topic_images')
+        # XXX Can we translate this folder names?
         # Create folder to store topic images
         if config.CREATE_TOPIC_IMAGES_FOLDERS and not has_topic_images:
             _createObjectByType('Folder',

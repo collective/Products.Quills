@@ -16,37 +16,3 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: plone\n"
 
-msgid "Archive"
-msgstr "Архив"
-
-msgid "Comments"
-msgstr "Комментарии"
-
-msgid "Drafts"
-msgstr "Черновики"
-
-# Workflow transitions (publish is known, so omiting that one)
-msgid "Revert to Draft"
-msgstr "Вернуть к черновику"
-
-# Content tabs
-msgid "Topics"
-msgstr "Темы"
-
-msgid "Trackbacks"
-msgstr "Трэкбэки"
-
-msgid "Weblog"
-msgstr "Веблог"
-
-# Content type names
-msgid "Weblog Entry"
-msgstr "Запись в веблоге"
-
-# Workflow states (published is known, so omitting that one)
-msgid "draft"
-msgstr "черновик"
-
-msgid "publish_in_place"
-msgstr "опубликовать"
-

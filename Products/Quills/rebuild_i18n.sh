@@ -3,7 +3,7 @@
 # Synchronise the quills.pot with the templates.
 # Also merge it with generated.pot, which includes the items
 # from the .py files.
-i18ndude rebuild-pot --pot i18n/quills.pot --create quills --merge i18n/generated.pot skins/Quills browser/
+i18ndude rebuild-pot --pot i18n/quills.pot --create quills --merge i18n/generated.pot .
 
 # Synchronise the resulting quills.pot with the .po files
 i18ndude sync --pot i18n/quills.pot i18n/quills*.po
