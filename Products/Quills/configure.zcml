@@ -6,7 +6,6 @@
 
   <include package="quills.app" />
   <include package=".browser" />
-  <include file="syndication.zcml" />
 
   <class class=".Weblog.Weblog">
     <implements interface="plone.portlets.interfaces.ILocalPortletAssignable" />
