@@ -65,15 +65,16 @@ class Migration(object):
             # Get the hold workflow state. Need to use a slightly different api
             # as the old workflow object is no longer around.
             old_state = wf_tool.getStatusOf(wf_id='quills_workflow', ob=entry)
-            old_state = old_state['review_state']
-            # Get the current workflow state so we can be sure not to try to do
-            # this migration more than once for an entry.
-            cur_state = wf_tool.getInfoFor(entry, name='review_state')
-            # If it is 'published', publish the entry in its new wf.
-            if old_state == 'published' and cur_state != 'published':
-                wf_tool.doActionFor(entry, 'publish')
-                msg = u'Republished weblog entry at %s'
-                print >> self.out, msg % '/'.join(entry.getPhysicalPath())
+            if old_state is not None:
+                old_state = old_state['review_state']
+                # Get the current workflow state so we can be sure not to try to do
+                # this migration more than once for an entry.
+                cur_state = wf_tool.getInfoFor(entry, name='review_state')
+                # If it is 'published', publish the entry in its new wf.
+                if old_state == 'published' and cur_state != 'published':
+                    wf_tool.doActionFor(entry, 'publish')
+                    msg = u'Republished weblog entry at %s'
+                    print >> self.out, msg % '/'.join(entry.getPhysicalPath())
 
 
     def movePostsToWeblogRoot(self, weblog):
