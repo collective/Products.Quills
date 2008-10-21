@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
-<import-steps>
+<import-steps
+    i18n:domain="quills" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
 
  <import-step id="quills-final"
               version="20070707-01"

@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
-<object name="portal_properties">
+<object name="portal_properties"
+        i18n:domain="quills" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
  <object name="site_properties">
   <property name="default_page_types" type="lines" purge="false">
    <element value="Weblog"/>
