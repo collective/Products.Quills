@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <object name="portal_factory" meta_type="Plone Factory Tool"
-        i18n:domain="quills" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+        xmlns:i18n="http://xml.zope.org/namespaces/i18n">
  <factorytypes>
   <type portal_type="WeblogEntry"/>
   <type portal_type="Weblog"/>
