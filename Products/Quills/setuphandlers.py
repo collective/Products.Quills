@@ -3,17 +3,12 @@ from StringIO import StringIO
 
 # Zope imports
 from transaction import commit
-from zope.component import getUtility
 
 # Plone imports
 from Products.CMFCore.utils import getToolByName
-from plone.portlets.constants import CONTENT_TYPE_CATEGORY
-from plone.portlets.interfaces import IPortletManager
-from plone.app.portlets.storage import PortletAssignmentMapping
 
 # Quills imports
 from quills.app.setuphandlers import setup_gs_profiles
-from quills.app.setuphandlers import weblogPortletSetup
 
 # Local imports
 import config
@@ -39,7 +34,6 @@ def importFinalSteps(context):
     setup_gs_profiles(portal, config.GS_DEPENDENCIES, out)
     automigrate(portal, out)
     updateSchemas(portal, out)
-    weblogPortletSetup(portal, out)
     print >> out, u"Successfully installed %s." % config.PROJECTNAME
     return out.getvalue()
 

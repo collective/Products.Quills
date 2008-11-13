@@ -20,6 +20,43 @@
       />
 
   <adapter
+      for="quills.core.interfaces.ITopic"
+      provides="quills.core.interfaces.IWeblogLocator"
+      factory="quills.app.locator.RecursingUpLocator"
+      />
+
+  <adapter
+      for="quills.core.interfaces.ITopicContainer"
+      provides="quills.core.interfaces.IWeblogLocator"
+      factory="quills.app.locator.RecursingUpLocator"
+      />
+
+  <adapter
+      for="quills.core.interfaces.IAuthorTopic"
+      provides="quills.core.interfaces.IWeblogLocator"
+      factory="quills.app.locator.RecursingUpLocator"
+      />
+
+  <adapter
+      for="quills.core.interfaces.IAuthorContainer"
+      provides="quills.core.interfaces.IWeblogLocator"
+      factory="quills.app.locator.RecursingUpLocator"
+      />
+
+  <adapter
+      for="quills.core.interfaces.IWeblogArchive"
+      provides="quills.core.interfaces.IWeblogLocator"
+      factory="quills.app.locator.RecursingUpLocator"
+      />
+
+  <adapter
+      for="quills.core.interfaces.IWeblogArchiveContainer"
+      provides="quills.core.interfaces.IWeblogLocator"
+      factory="quills.app.locator.RecursingUpLocator"
+      />
+
+
+  <adapter
       for="quills.core.interfaces.IWeblogEntry"
       provides="quills.core.interfaces.IWeblogLocator"
       factory="quills.app.locator.RecursingUpLocator"
@@ -31,6 +68,13 @@
       factory="quills.app.locator.SelfLocator"
       />
 
+  <subscriber
+      for="quills.core.interfaces.IWeblog
+           Products.Archetypes.interfaces.IObjectInitializedEvent"
+      handler="quills.app.activation.registerContextPortlets"
+      />
+
+
   <!-- profiles -->
   <genericsetup:registerProfile
       name="default"
@@ -39,6 +83,15 @@
       description="Extension profile for the Quills product."
       provides="Products.GenericSetup.interfaces.EXTENSION"
       for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      />
+
+  <genericsetup:upgradeStep
+      source="0.0"
+      destination="1.7"
+      profile="Products.Quills:default"
+      title="Remove by-interface portlets assignments"
+      description="We don't need by-interface portlet assignments in Quills based Weblog entries, because they are registered by-content-type"
+      handler=".migrations.quills16to17.removePortletAssignments"
       />
 
 </configure>
