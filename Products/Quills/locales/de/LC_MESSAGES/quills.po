@@ -1,0 +1,50 @@
+# translation of quills-de.po to Deutsch
+# Jan Hackel <plonecode@hackel.name>, 2008.
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+msgid ""
+msgstr ""
+"Project-Id-Version: quills-de\n"
+"POT-Creation-Date: 2008-11-18 20:39+0000\n"
+"PO-Revision-Date: 2008-11-18 21:11+0100\n"
+"Last-Translator: Jan Hackel <plonecode@hackel.name>\n"
+"Language-Team: Deutsch <en@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: de\n"
+"Language-Name: German\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: plone\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#. Default: "A brief description of this weblog. This text will be displayed at the top of the page before any weblog entries."
+#: ./Weblog.py:87
+msgid "help_weblog_description"
+msgstr "Eine kurze Besschreibung dieses Blogs. Dieser Text wird oberhalb aller Blog-Einträge angezeigt."
+
+#. Default: "A brief introduction for this entry."
+#: ./WeblogEntry.py:65
+msgid "help_weblogentry_description"
+msgstr "Eine kurze Einleitung für diesen Eintrag."
+
+#. Default: "Entry Text"
+#: ./WeblogEntry.py:73
+msgid "label_text"
+msgstr "Inhalt des Eintrags"
+
+#. Default: "Description"
+#: ./Weblog.py:86
+msgid "label_weblog_description"
+msgstr "Beschreibung"
+
+#. Default: "Excerpt"
+#: ./WeblogEntry.py:64
+msgid "label_weblogentry_description"
+msgstr "Auszug"
+
+#. Default: "Configure"
+#: ./profiles/default/types/Weblog.xml
+msgid "title_configure_weblog_view"
+msgstr "Konfiguration"
+
