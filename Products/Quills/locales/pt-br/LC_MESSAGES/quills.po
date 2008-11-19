@@ -1,0 +1,50 @@
+# Gettext Message File for Quills.
+# This one should include the workflow names, content type names and
+# other strangely not i18n-taggable stuff. Empty for now.
+msgid ""
+msgstr ""
+"Project-Id-Version: Quills 1.5\n"
+"POT-Creation-Date: 2008-11-18 20:39+0000\n"
+"PO-Revision-Date: 2006-09-26 17:32-0300\n"
+"Last-Translator: �rico Andrei <erico@simplesconsultoria.com.br>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language-Code: pt-br\n"
+"Language-Name: Português do Brasil\n"
+"Preferred-Encodings: latin1 utf-8\n"
+"Domain: plone\n"
+
+#. Default: "A brief description of this weblog. This text will be displayed at the top of the page before any weblog entries."
+#: ./Weblog.py:87
+#, fuzzy
+msgid "help_weblog_description"
+msgstr "Uma breve descrição sobre este blog. Este texto será exibido no topo da página antes de qualquer uma das entradas."
+
+#. Default: "A brief introduction for this entry."
+#: ./WeblogEntry.py:65
+msgid "help_weblogentry_description"
+msgstr ""
+
+#. Default: "Entry Text"
+#: ./WeblogEntry.py:73
+msgid "label_text"
+msgstr "Corpo da entrada"
+
+#. Default: "Description"
+#: ./Weblog.py:86
+msgid "label_weblog_description"
+msgstr "Descrição"
+
+#. Default: "Excerpt"
+#: ./WeblogEntry.py:64
+msgid "label_weblogentry_description"
+msgstr ""
+
+#. Default: "Configure"
+#: ./profiles/default/types/Weblog.xml
+msgid "title_configure_weblog_view"
+msgstr ""
+

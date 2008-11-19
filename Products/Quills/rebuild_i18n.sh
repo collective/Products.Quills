@@ -1,14 +1,11 @@
 #!/bin/sh
+PRODUCTNAME='quills'
+I18NDOMAIN=$PRODUCTNAME
 
-# Synchronise the quills.pot with the templates.
-# Also merge it with generated.pot, which includes the items
-# from the .py files.
-i18ndude rebuild-pot --pot i18n/quills.pot --create quills --merge i18n/generated.pot .
+# Synchronise the .pot with the templates.
+i18ndude rebuild-pot --pot locales/${PRODUCTNAME}.pot --merge locales/${PRODUCTNAME}-manual.pot --create ${I18NDOMAIN} .
 
-# Synchronise the resulting quills.pot with the .po files
-i18ndude sync --pot i18n/quills.pot i18n/quills*.po
+# Synchronise the resulting .pot with the .po files
+i18ndude sync --pot locales/${PRODUCTNAME}.pot locales/*/LC_MESSAGES/${PRODUCTNAME}.po
 
-# Synchronise the plone*.po files with the hand-made plone-quills.pot
-# This one is used for workflow name translations, content type names,
-# etc.
-i18ndude sync --pot i18n/plone-quills.pot i18n/plone*.po
+

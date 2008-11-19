@@ -2,10 +2,14 @@
            xmlns:browser="http://namespaces.zope.org/browser"
            xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
            xmlns:five="http://namespaces.zope.org/five"
-           i18n_domain="quills">
+           xmlns:i18n="http://namespaces.zope.org/i18n"
+           i18n:domain="quills">
 
   <include package="quills.app" />
+
+  <i18n:registerTranslations directory="locales" />
   <include package=".browser" />
+
 
   <class class=".Weblog.Weblog">
     <implements interface="plone.portlets.interfaces.ILocalPortletAssignable" />
