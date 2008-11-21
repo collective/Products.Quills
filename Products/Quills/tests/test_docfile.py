@@ -35,6 +35,22 @@ def test_suite():
     )
 
     suite.addTest(ZopeDocFileSuite(
+        'tests.txt',
+        package='quills.core.tests',
+        test_class=QuillsContributorDocTestCase,
+        optionflags=optionflags,
+        )
+    )
+
+    suite.addTest(ZopeDocFileSuite(
+        'browser.rst',
+        package='quills.app.tests',
+        test_class=QuillsFunctionalTestCase,
+        optionflags=optionflags,
+        )
+    )
+
+    suite.addTest(ZopeDocFileSuite(
         'browser.rst',
         package='Products.Quills.tests',
         test_class=QuillsFunctionalTestCase,
@@ -58,13 +74,6 @@ def test_suite():
         )
     )
 
-    suite.addTest(ZopeDocFileSuite(
-        'tests.txt',
-        package='quills.core.tests',
-        test_class=QuillsContributorDocTestCase,
-        optionflags=optionflags,
-        )
-    )
 
     suite.layer = PloneSite
     return suite
