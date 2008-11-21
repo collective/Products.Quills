@@ -74,7 +74,7 @@
 
   <subscriber
       for="quills.core.interfaces.IWeblog
-           Products.Archetypes.interfaces.IObjectInitializedEvent"
+           zope.app.container.interfaces.IObjectAddedEvent"
       handler="quills.app.activation.registerContextPortlets"
       />
 
