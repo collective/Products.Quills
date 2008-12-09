@@ -40,11 +40,14 @@ class QuillsTestCaseMixin:
 
     def afterSetUp(self):
         self.loginAsPortalOwner()
-        self.portal.invokeFactory('Weblog', id='weblog')
-        self.weblog = self.portal.weblog
+        self.weblog = self.createBlog('weblog')
         self.portal.portal_workflow.doActionFor(self.portal.weblog, "publish")
 
-
+    def createBlog(self, id):
+        """Create a Weblog."""
+        self.portal.invokeFactory('Weblog', id=id)
+        return self.portal[id]
+    
 class QuillsTestCase(QuillsTestCaseMixin, PloneTestCase.PloneTestCase):
     """Base class for integration tests for the 'Quills' product. This may
     provide specific set-up and tear-down operations, or provide convenience

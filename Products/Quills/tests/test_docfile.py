@@ -60,6 +60,14 @@ def test_suite():
 
     suite.addTest(ZopeDocFileSuite(
         'fixedBugs.rst',
+        package='quills.app.tests',
+        test_class=QuillsFunctionalTestCase,
+        optionflags=optionflags,
+        )
+    )
+
+    suite.addTest(ZopeDocFileSuite(
+        'fixedBugs.rst',
         package='Products.Quills.tests',
         test_class=QuillsFunctionalTestCase,
         optionflags=optionflags,
