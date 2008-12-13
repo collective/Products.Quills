@@ -26,7 +26,6 @@ from zope.interface import implements
 from zope.component import getUtility
 from AccessControl import ClassSecurityInfo
 from Acquisition import aq_base
-from DateTime import DateTime
 
 # Archetypes imports
 from Products.Archetypes.public import BaseFolderSchema
@@ -200,7 +199,6 @@ class Weblog(WeblogMixin, BaseFolder):
             meta_type=['WeblogEntry',],
             path={ 'query' : '/'.join(self.getPhysicalPath()),
                    'level' : 0, },
-            effective={'query' : DateTime(), 'range' : 'max'},
             sort_on='effective',
             sort_order='reverse',
             review_state={ 'query'    : weblog_config.published_states,
