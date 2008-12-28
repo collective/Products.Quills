@@ -1,3 +1,11 @@
 <configure xmlns="http://namespaces.zope.org/browser">
 
+  <page
+      for="quills.core.interfaces.IWeblogEntry"
+      name="breadcrumbs_view"
+      class="quills.app.browser.breadcrumbs.ArchiveAwareBreadcrumbs"
+      permission="zope.Public"
+      allowed_attributes="breadcrumbs"
+      />
+
 </configure>
