@@ -87,7 +87,7 @@ class Migration(object):
                                           'depth' : 1 },
                                    portal_type='WeblogEntry')
             if entries:
-                entriesByPath[archive.getObject()] = [ entry.getId for entry in entries ]
+                entriesByPath[archive.getObject()] = [ entry.getId() for entry in entries ]
 
         for archive, entries in entriesByPath.items():
             cut = archive.manage_cutObjects(entries)
