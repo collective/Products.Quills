@@ -16,11 +16,18 @@
   <element value="WeblogEntry"/>
  </property>
 
- <alias from="(Default)" to="weblog_view"/>
+ <property name="view_methods">
+	 <element value="weblog_view"/>
+	 <element value="archive_view"/>
+	 <element value="author_listing"/>
+	 <element value="topic_listing"/>
+ </property>
+
+ <alias from="(Default)" to="(dynamic view)"/>
  <alias from="edit" to="base_edit"/>
  <alias from="properties" to="base_metadata"/>
  <alias from="sharing" to="folder_localrole_form"/>
- <alias from="view" to="weblog_view"/>
+ <alias from="view" to="(selected layout)"/>
 
  <action title="View"
          action_id="view"

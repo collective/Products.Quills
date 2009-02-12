@@ -42,7 +42,7 @@ from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import _createObjectByType
 from plone.i18n.normalizer.interfaces import IIDNormalizer
 
-from Products.CMFDynamicViewFTI.interface import ISelectableBrowserDefault 
+from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
 # BBB: ISelectableBrowserDefault needed for Plone3
 # See:
 #  * http://plone.org/products/quills/issues/121
@@ -95,15 +95,19 @@ WeblogSchema = BaseFolderSchema.copy() + Schema((
 WeblogSchema['subject'].languageIndependent = True
 
 
-class Weblog(WeblogMixin, BaseFolder):
+class Weblog(WeblogMixin, BaseFolder, BrowserDefaultMixin):
     """Weblog object.
 
     >>> from zope.interface.verify import verifyClass
     >>> verifyClass(IWeblog, Weblog)
     True
+    
+    >>> from Products.CMFDynamicViewFTI.interface import ISelectableBrowserDefault
+    >>> verifyClass(ISelectableBrowserDefault, Weblog)
+    True
     """
 
-    implements(IWeblog, ISelectableBrowserDefault)
+    implements(IWeblog)
 
     schema = WeblogSchema
     security = ClassSecurityInfo()
