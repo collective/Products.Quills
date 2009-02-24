@@ -51,13 +51,13 @@ from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
 
 # Quills imports
 from Products.Quills import QuillsMessageFactory as _
-from quills.core.interfaces import IWeblog
+from quills.core.interfaces import IWeblog, IWeblogEntry
 from quills.app.interfaces import IWeblogEnhancedConfiguration
 from quills.app.topic import TopicContainer
 from quills.app.topic import AuthorContainer
 from quills.app.archive import ArchiveContainer
 from quills.app.archive import YearArchive
-from quills.app.weblogentrybrain import WeblogEntryCatalogBrain
+from quills.app.utilities import BloggifiedCatalogResults
 from quills.app.weblog import WeblogMixin
 
 # Local imports
@@ -138,6 +138,18 @@ class Weblog(WeblogMixin, BaseFolder, BrowserDefaultMixin):
                                 config.UPLOAD_FOLDER_ID,
                                 title='Uploads')
 
+    security.declareProtected(perms.View, 'getTitle')
+    def getTitle(self):
+        """See IWeblog.
+        """
+        return self.Title()
+
+    security.declareProtected(perms.View, 'getId')
+    def getId(self):
+        """See IWeblog.
+        """
+        return self.id
+ 
     security.declareProtected(perms.View, 'getTopics')
     def getTopics(self):
         """See IWeblog.
@@ -175,16 +187,15 @@ class Weblog(WeblogMixin, BaseFolder, BrowserDefaultMixin):
         """See IWeblog.
         """
         catalog = getToolByName(self, 'portal_catalog')
-        catalog._catalog.useBrains(WeblogEntryCatalogBrain)
         path = '/'.join(self.getPhysicalPath())
         results = catalog(
                 meta_type=['WeblogEntry',],
                 path={'query':path, 'level': 0},
                 getId=id,)
         if results:
-            return results[0]
-        # To be clear...
-        return None
+            return BloggifiedCatalogResults.wrap(results[0])
+        else:
+            return None
 
     security.declareProtected(perms.View, 'hasEntry')
     def hasEntry(self, id):
@@ -197,7 +208,6 @@ class Weblog(WeblogMixin, BaseFolder, BrowserDefaultMixin):
         """See IWeblog.
         """
         catalog = getToolByName(self, 'portal_catalog')
-        catalog._catalog.useBrains(WeblogEntryCatalogBrain)
         weblog_config = IWeblogEnhancedConfiguration(self)
         results = catalog(
             meta_type=['WeblogEntry',],
@@ -207,28 +217,26 @@ class Weblog(WeblogMixin, BaseFolder, BrowserDefaultMixin):
             sort_order='reverse',
             review_state={ 'query'    : weblog_config.published_states,
                            'operator' : 'or'})
-        return self._filter(results, maximum, offset)
+        return BloggifiedCatalogResults(self._filter(results, maximum, offset))
 
     security.declareProtected(perms.ViewDrafts, 'getAllEntries')
     def getAllEntries(self, maximum=None, offset=0):
         """See IWeblog.
         """
         catalog = getToolByName(self, 'portal_catalog')
-        catalog._catalog.useBrains(WeblogEntryCatalogBrain)
         path = '/'.join(self.getPhysicalPath())
         results = catalog(
                 meta_type=['WeblogEntry',],
                 path={'query':path, 'level': 0},
                 sort_on = 'effective',
                 sort_order = 'reverse')
-        return self._filter(results, maximum, offset)
+        return BloggifiedCatalogResults(self._filter(results, maximum, offset))
 
     security.declareProtected(perms.ViewDrafts, 'getDrafts')
     def getDrafts(self, maximum=None, offset=0):
         """See IWeblog.
         """
         catalog = getToolByName(self, 'portal_catalog')
-        catalog._catalog.useBrains(WeblogEntryCatalogBrain)
         weblog_config = IWeblogEnhancedConfiguration(self)
         path = '/'.join(self.getPhysicalPath())
         results = catalog(
@@ -237,7 +245,7 @@ class Weblog(WeblogMixin, BaseFolder, BrowserDefaultMixin):
                 sort_on = 'effective',
                 sort_order = 'reverse',
                 review_state = weblog_config.draft_states)
-        return self._filter(results, maximum, offset)
+        return BloggifiedCatalogResults(self._filter(results, maximum, offset))
 
     security.declareProtected(perms.View, 'getAuthors')
     def getAuthors(self):
@@ -297,13 +305,13 @@ class Weblog(WeblogMixin, BaseFolder, BrowserDefaultMixin):
         """
         self.manage_delObjects(ids=[entry_id,])
 
-    security.declareProtected(perms.View, 'getAuthorById')
+    security.declareProtected(perms.View, 'getWeblogContentObject')
     def getWeblogContentObject(self):
         """See IWeblog.
         """
         return self
 
-    security.declareProtected(perms.View, 'getAuthorById')
+    security.declareProtected(perms.View, 'getWeblog')
     def getWeblog(self):
         """See IWeblog.
         """

@@ -30,6 +30,12 @@ class TestWeblog(QuillsTestCase):
                                   id="Keyword1",
                                   title="Folder or Keyword1")
 
+    def testId(self):
+        self.assertEquals(self.weblog.getId(), "weblog")
+
+    def testTitle(self):
+        self.assertEquals(self.weblog.getTitle(), "Test Weblog")
+
     def testTopicImageFolderCreation(self):
         # Test the CREATE_TOPIC_IMAGES_FOLDERS toggle
         from Products.Quills import config

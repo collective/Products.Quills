@@ -53,8 +53,6 @@ from quills.app.interfaces import IWeblogEnhancedConfiguration
 from config import PROJECTNAME
 import permissions as perms
 
-from Products.Archetypes.ExtensibleMetadata import FLOOR_DATE
-
 WeblogEntrySchema = BaseSchema.copy() + Schema((
 
     TextField('description',
