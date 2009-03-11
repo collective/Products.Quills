@@ -2,7 +2,7 @@
 from StringIO import StringIO
 
 # quills imports
-from Products.QuillsEnabled import config
+from Products.Quills import config
 from quills.app.setuphandlers import addNewDiscussionReplyFormAction
 from quills.app.setuphandlers import delNewDiscussionReplyFormAction
 
