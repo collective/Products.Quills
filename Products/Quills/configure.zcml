@@ -6,10 +6,8 @@
            i18n:domain="quills">
 
   <include package="quills.app" />
-
-  <i18n:registerTranslations directory="locales" />
   <include package=".browser" />
-
+  <i18n:registerTranslations directory="locales" />
 
   <class class=".Weblog.Weblog">
     <implements interface="plone.portlets.interfaces.ILocalPortletAssignable" />

@@ -29,6 +29,7 @@ from DateTime.DateTime import DateTime
 from Products.CMFCore.utils import getToolByName
 from Products.CMFCore.WorkflowCore import WorkflowException
 from Products.CMFPlone.utils import log
+from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
 
 # Archetypes imports
 from Products.Archetypes.public import BaseSchema
@@ -38,7 +39,6 @@ from Products.Archetypes.public import TextAreaWidget
 from Products.Archetypes.public import RichWidget
 from Products.Archetypes.public import BaseContent
 from Products.Archetypes.public import registerType
-
 from Products.Archetypes.Marshall import RFC822Marshaller
 
 # Quills imports
@@ -91,7 +91,7 @@ WeblogEntrySchema['allowDiscussion'].schemata = 'default'
 WeblogEntrySchema.moveField('allowDiscussion', after='subject')
 
 
-class WeblogEntry(QuillsMixin, BaseContent):
+class WeblogEntry(QuillsMixin, BaseContent, BrowserDefaultMixin):
     """Basic Weblog Entry.
 
     >>> from zope.interface.verify import verifyClass
