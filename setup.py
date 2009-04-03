@@ -1,23 +1,22 @@
 from setuptools import setup, find_packages
+import os
 
-version = '1.7'
+version = '1.7.0'
 
 setup(name='Products.Quills',
       version=version,
       description="A Blogging Product for Plone",
-      long_description="""\
-Quills is an Enterprise Weblog System for the Plone content management system. It is designed from the ground up to work well and provide specialized features for a multi-blog, multi-user environment.""",
+      long_description=open("README.txt").read() + "\n" +
+                       open(os.path.join("docs", "HISTORY.txt")).read(),
       # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
         "Framework :: Plone",
-        "Framework :: Zope2",
-        "Framework :: Zope3",
         "Programming Language :: Python",
         "Topic :: Software Development :: Libraries :: Python Modules",
         ],
       keywords='plone blogging',
       author='Quills Team',
-      author_email='quills-dev@lists.etria.com',
+      author_email='plone-quills@googlegroups.com',
       url='http://plone.org/products/quills',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),

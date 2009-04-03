@@ -1,4 +1,5 @@
-Changelog for Products.Quills
+Changelog
+=========
 
     (name of developer listed in brackets)
 
