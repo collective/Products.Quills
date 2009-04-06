@@ -1,16 +1,17 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.7.0'
+version = '1.7.0b3'
 
 setup(name='Products.Quills',
       version=version,
-      description="A Blogging Product for Plone",
+      description="A Blogging Suite for Plone.",
       long_description=open("README.txt").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
-      # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
+        "Development Status :: 4 - Beta",
         "Framework :: Plone",
+        "License :: OSI Approved :: GNU General Public License (GPL)",
         "Programming Language :: Python",
         "Topic :: Software Development :: Libraries :: Python Modules",
         ],
@@ -18,6 +19,7 @@ setup(name='Products.Quills',
       author='Quills Team',
       author_email='plone-quills@googlegroups.com',
       url='http://plone.org/products/quills',
+      download_url="http://svn.plone.org/svn/collective/Products.Quills",
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['Products'],
@@ -25,10 +27,7 @@ setup(name='Products.Quills',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          'quills.app',
-          'Products.basesyndication',
-          'Products.fatsyndication',
-          # -*- Extra requirements: -*-
+          'quills.app>=1.7.0b3,<=1.7.99',
       ],
       entry_points="""
       # -*- Entry points: -*-

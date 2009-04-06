@@ -3,8 +3,14 @@ Changelog
 
     (name of developer listed in brackets)
 
-Products.Quills - svn/1.6-dev Unreleased
+1.7.0
+-----
 
-    - Initial package structure.
-      [zopeskel]
+- list yet to be compiled
+
+
+svn/1.6-dev Unreleased
+----------------------
+
+- Initial package structure. [zopeskel]
 
