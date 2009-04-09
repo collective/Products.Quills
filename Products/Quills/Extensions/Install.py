@@ -3,32 +3,26 @@ from StringIO import StringIO
 
 # quills imports
 from Products.Quills import config
-from quills.app.setuphandlers import addNewDiscussionReplyFormAction
-from quills.app.setuphandlers import delNewDiscussionReplyFormAction
+from quills.app.setuphandlers import setup_gs_profiles
 
+import transaction
 
-def install(self):
-    """Install Quills.
-    This method is basically unnecessary in that most of it has been moved to
-    Products.Quills.setuphandlers. However, in order to support uninstalling, we
-    need the QI tool to pickup the uninstall function below that cleans up our
-    'discussion_reply_form' form controller action. For symmetry, I'm therefore
-    placing the set up of that action here.
+# The install method is gone! Everything that needs to done in code
+# is in module Products.Quills.setuphandlers now. If you must (you don't)
+# re-add the install method, make sure to load the GS profile of
+# Products.Quills there. QuickInstaller *will not load* the profile by itself!
 
-    N.B. Think *very* carefully before you place any more code here. It should
-    probably be in one of the setuphandlers modules (i.e. in Products.Quills or
-    quills.app).
-    """
-    out = StringIO()
-    addNewDiscussionReplyFormAction(self, out)
-    print >> out, u"Successfully installed %s." % config.PROJECTNAME
-    return out.getvalue()
-
+    
 def uninstall(self):
-    """Uninstall Quills.
+    """QuickInstaller uninstall handler for Quills.
+
+    Unfortunately, the QuickInstaller will not execute extension profiles for 
+    uninstalling. That's why we have to do it on our own. All other uninstalling
+    is done by profile, either declarative or as code in module 
+    ``setuphandlers``.
     """
     out = StringIO()
-    delNewDiscussionReplyFormAction(self, out)
+    setup_gs_profiles(self, (config.MY_GS_PROFILE + ":uninstall",), out)
     print >> out, u"Successfully uninstalled %s." % config.PROJECTNAME
     return out.getvalue()
 

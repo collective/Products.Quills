@@ -2,9 +2,9 @@
 <import-steps
     xmlns:i18n="http://xml.zope.org/namespaces/i18n">
 
- <import-step id="quills-final"
+ <import-step id="quills-install-final"
               version="20070707-01"
-              handler="Products.Quills.setuphandlers.importFinalSteps"
+              handler="Products.Quills.setuphandlers.installFinalSteps"
               title="Final Quills Config">
   <dependency step="plone-final" />
     Final Quills configuration

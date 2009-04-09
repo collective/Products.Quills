@@ -8,35 +8,46 @@ from transaction import commit
 from Products.CMFCore.utils import getToolByName
 
 # Quills imports
-from quills.app.setuphandlers import setup_gs_profiles
+from quills.app.setuphandlers import addNewDiscussionReplyFormAction
+from quills.app.setuphandlers import delNewDiscussionReplyFormAction
 
 # Local imports
 import config
 import migrations
 
 
-def importFinalSteps(context):
-    """Install Quills."""
+def installFinalSteps(context):
+    """Install Quills.
+    """
     # Only run step if a flag file is present
     # see http://maurits.vanrees.org/weblog/archive/2007/06/discovering-genericsetup
     if context.readDataFile('quills_product_various.txt') is None:
         return
     out = StringIO()
+
     # install dependencies
     portal = context.getSite()
     quickinstaller = portal.portal_quickinstaller
-
     for dependency in config.DEPENDENCIES:
         print >> out, u"Installing dependency %s:" % dependency
         quickinstaller.installProduct(dependency)
         commit()
-
-    setup_gs_profiles(portal, config.GS_DEPENDENCIES, out)
+    
     automigrate(portal, out)
     updateSchemas(portal, out)
+    addNewDiscussionReplyFormAction(portal, out)
     print >> out, u"Successfully installed %s." % config.PROJECTNAME
     return out.getvalue()
 
+def uninstallFinalSteps(context):
+    """Uninstall Quills stuff that GS profiles cannot catch.
+    """
+    if context.readDataFile('quills_product_various.txt') is None:
+        return
+    out = StringIO()
+    portal = context.getSite()
+    delNewDiscussionReplyFormAction(portal, out)
+    return out.getvalue()
 
 def automigrate(self, out):
     """Call the migration in so far it can be done safely.

@@ -7,7 +7,9 @@ products installed.
 from Testing import ZopeTestCase
 from Products.Five.testbrowser import Browser as BaseBrowser
 
-# Let Zope know about Quills
+# Let Zope know about the products we need. Only "old style" products with
+# the "Products" prefix need to appear here. 
+ZopeTestCase.installProduct('fatsyndication')
 ZopeTestCase.installProduct('Quills')
 
 # Import PloneTestCase - this registers more products with Zope as a side effect
@@ -20,8 +22,10 @@ setupPloneSite(products=['Quills'])
 
 class Browser(BaseBrowser):
 
-    def addAuthorizationHeader(self, user=PloneTestCase.default_user, password=PloneTestCase.default_password):
-        """ add an authorization header using the given or default credentials """
+    def addAuthorizationHeader(self, user=PloneTestCase.default_user,
+                               password=PloneTestCase.default_password):
+        """Add an authorization header using the given or default credentials.
+        """
         self.addHeader('Authorization', 'Basic %s:%s' % (user, password))
         return self
 

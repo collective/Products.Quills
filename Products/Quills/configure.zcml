@@ -87,6 +87,15 @@
       for="Products.CMFPlone.interfaces.IPloneSiteRoot"
       />
 
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="Products.Quills"
+      directory="profiles/uninstall"
+      description="Uninstall Quills."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      />
+
   <genericsetup:upgradeStep
       source="0.0"
       destination="1.7"

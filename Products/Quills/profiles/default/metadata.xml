@@ -1,4 +1,11 @@
 <?xml version="1.0"?>
 <metadata>
   <version>1.7.0b3</version>
+  <description>Blogging application.</description>
+
+  <dependencies>
+      <dependency>profile-Products.fatsyndication:default</dependency>
+      <dependency>profile-quills.app:default</dependency>
+   </dependencies>
+
 </metadata>

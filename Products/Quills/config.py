@@ -21,10 +21,8 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 PROJECTNAME = "Quills"
-DEPENDENCIES = ('fatsyndication',
-               )
-GS_DEPENDENCIES = ('quills.app:default',
-                  )
+MY_GS_PROFILE = "Products.%s" % (PROJECTNAME,)
+DEPENDENCIES = ()
 # Toggle to determine whether a 'topic_images' folder should be created
 # automatically in each new Weblog instance.
 CREATE_TOPIC_IMAGES_FOLDERS = True

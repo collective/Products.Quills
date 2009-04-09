@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<import-steps
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+
+ <import-step id="quills-uninstall-final"
+              version="2009-04-09"
+              handler="Products.Quills.setuphandlers.uninstallFinalSteps"
+              title="Remove Quills settings that cannot be expressed in a profile.">
+  <dependency step="plone-final" />
+    Final Quills uninstall configuration.
+ </import-step>
+
+</import-steps>
