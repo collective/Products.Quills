@@ -89,7 +89,7 @@
 
   <genericsetup:registerProfile
       name="uninstall"
-      title="Products.Quills"
+      title="Products.Quills (uninstall)"
       directory="profiles/uninstall"
       description="Uninstall Quills."
       provides="Products.GenericSetup.interfaces.EXTENSION"
