@@ -1,0 +1,18 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five">
+
+  <!-- Plone log deprecation warning about Weblog/WeblogEntry using
+       deprecated manage_afterAdd/manage_beforeDelete methods.
+       However, this operations come from the Archetype base class.
+       We can safely ignore those warnings.
+
+       See http://blogs.nuxeo.com/sections/blogs/florent_guillaume/2005_11_08_events-in-zope-2-9 for further information on that topic.
+   -->
+  <five:deprecatedManageAddDelete
+      class="Products.Quills.Weblog.Weblog"/>
+
+  <five:deprecatedManageAddDelete
+      class="Products.Quills.WeblogEntry.WeblogEntry"/>
+
+</configure>
