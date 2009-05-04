@@ -157,5 +157,50 @@ is imposible to check the failure.
     True
 
 
+Issue #191: Topic listing contains broken links to indvidual topics
+-------------------------------------------------------------------
+
+The links generated lack the 'topics' infix. This happens only when trying to
+render the topics via the 'topic_listing' view. This fix removes this
+view registration.
+
+We start as usual: create a post, this time with a topic assigned.
+
+    >>> self.login()
+    >>> self.setRoles(('Manager',))
+
+    >>> entry = self.weblog.addEntry(title="Issue #191", id="issue191",
+    ...                      topics=['brokenTopic'],
+    ...                      excerpt="None", text="None")
+    >>> entry.publish()
+
+Hide the tag clouds portlet. This will otherwise give us two links with the
+same name.
+
+    >>> from zope.component import getMultiAdapter, getUtility
+    >>> from plone.portlets.interfaces import IPortletManager
+    >>> left = getUtility(IPortletManager, name='plone.leftcolumn')
+    >>> from plone.portlets.interfaces import IPortletAssignmentMapping
+    >>> portlets = getMultiAdapter((self.portal.weblog, left),
+    ...                            IPortletAssignmentMapping)
+    >>> topicPortlet =  portlets['tagcloud']
+    >>> del portlets['tagcloud']
+
+Have a look at the topics.
+
+    >>> browser = self.getBrowser(logged_in=True)
+    >>> browser.handleErrors = True
+    >>> browser.open("http://nohost/plone/weblog/@@topic_listing")
 
 
+Get the link to our topic.
+
+    >>> link = browser.getLink("brokenTopic")
+    >>> link.click()
+    
+    >>> browser.title.split()[0]
+    'brokenTopic'
+
+Show the portlet again.
+
+    >>> portlets['tagcloud'] = topicPortlet
