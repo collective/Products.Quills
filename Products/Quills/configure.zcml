@@ -34,6 +34,11 @@
       handler="quills.app.activation.registerContextPortlets"
       />
 
+  <subscriber
+      for="quills.core.interfaces.IWeblog
+           zope.app.container.interfaces.IObjectAddedEvent"
+      handler=".Weblog.createSpecialFolders"
+      />
 
   <!-- profiles -->
   <genericsetup:registerProfile

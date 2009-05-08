@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.5rc2\n"
-"POT-Creation-Date: 2008-11-18 20:39+0000\n"
+"POT-Creation-Date: 2009-05-08 13:12+0000\n"
 "PO-Revision-Date: 2006-08-18 19:00+0200\n"
 "Last-Translator: Enzo Cesanelli <enzo at noiza dot com>\n"
 "Language-Team: Enzo Cesanelli <enzo at noiza dot com>\n"
@@ -22,13 +22,23 @@ msgid "help_weblog_description"
 msgstr ""
 
 #. Default: "A brief introduction for this entry."
-#: ./WeblogEntry.py:65
+#: ./WeblogEntry.py:63
 msgid "help_weblogentry_description"
 msgstr ""
 
 #. Default: "Entry Text"
-#: ./WeblogEntry.py:73
+#: ./WeblogEntry.py:71
 msgid "label_text"
+msgstr ""
+
+#. Default: "Topic Images"
+#: ./Weblog.py:113
+msgid "label_topic_image_folder_name"
+msgstr ""
+
+#. Default: "Uploads"
+#: ./Weblog.py:119
+msgid "label_uploads_folder_name"
 msgstr ""
 
 #. Default: "Description"
@@ -37,7 +47,7 @@ msgid "label_weblog_description"
 msgstr ""
 
 #. Default: "Excerpt"
-#: ./WeblogEntry.py:64
+#: ./WeblogEntry.py:62
 msgid "label_weblogentry_description"
 msgstr ""
 

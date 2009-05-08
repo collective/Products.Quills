@@ -134,16 +134,9 @@ There should be only one: the entry itself.
     1
 
 Issue #147 in which an error is caused in weblog view when using
-keywords with non-ascii characters. First of all, we add the topic_images
-folder because we get errors in quills.app.topic.getImage and there is
-a check of topic_images that, if it doesn't exists, returns None and
-is imposible to check the failure.
+keywords with non-ascii characters.
 
     >>> from Products.CMFPlone.utils import _createObjectByType
-    >>> _createObjectByType('Folder',
-    ...                     self.weblog,
-    ...                     'topic_images')
-    <ATFolder at /plone/weblog/topic_images>
     >>> entry = self.weblog.addEntry('New entry',
     ...                              'This is for testing non-ascii keywords',
     ...                              'Nothing to see here...',

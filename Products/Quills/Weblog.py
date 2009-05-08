@@ -95,6 +95,27 @@ WeblogSchema = BaseFolderSchema.copy() + Schema((
 WeblogSchema['subject'].languageIndependent = True
 
 
+
+def createSpecialFolders(blog, event):
+    """Create folders for uploads and topic images. Supposed to be triggered
+    on Weblog creation.
+    
+    We use '_createObjectByType' here so that we don't have to allow the
+    'Folder' content type for the weblog.
+    """
+    has_topic_images = hasattr(blog, 'topic_images')
+    typestool = getToolByName(blog, 'portal_types')
+    if config.CREATE_TOPIC_IMAGES_FOLDERS and not has_topic_images:
+        typestool.constructContent('Folder', container=blog,
+            id=config.TOPIC_IMAGE_FOLDER_ID,
+            title=_(u'label_topic_image_folder_name', default=u'Topic Images'))
+    has_uploads = hasattr(blog, 'uploads')
+    # Create folder to store topic images
+    if config.CREATE_UPLOAD_FOLDERS and not has_uploads:
+        typestool.constructContent('Folder',container=blog,
+            id=config.UPLOAD_FOLDER_ID,
+            title=_(u'label_uploads_folder_name', default=u'Uploads'))
+
 class Weblog(WeblogMixin, BaseFolder, BrowserDefaultMixin):
     """Weblog object.
 
@@ -113,30 +134,6 @@ class Weblog(WeblogMixin, BaseFolder, BrowserDefaultMixin):
     security = ClassSecurityInfo()
 
     _at_rename_after_creation = True
-
-    def at_post_create_script(self):
-        """This only works if processForm() is called on the weblog which is
-        part of the base_edit form controller (i.e. adding content through the
-        Plone GUI.)
-        
-        We use '_createObjectByType' here so that we don't have to allow the
-        'Folder' content type for the weblog.
-        """
-        has_topic_images = hasattr(aq_base(self.aq_inner), 'topic_images')
-        # XXX Can we translate this folder names?
-        # Create folder to store topic images
-        if config.CREATE_TOPIC_IMAGES_FOLDERS and not has_topic_images:
-            _createObjectByType('Folder',
-                                self,
-                                config.TOPIC_IMAGE_FOLDER_ID,
-                                title='Topic Images')
-        has_uploads = hasattr(aq_base(self.aq_inner), 'uploads')
-        # Create folder to store topic images
-        if config.CREATE_UPLOAD_FOLDERS and not has_uploads:
-            _createObjectByType('Folder',
-                                self,
-                                config.UPLOAD_FOLDER_ID,
-                                title='Uploads')
 
     security.declareProtected(perms.View, 'getTitle')
     def getTitle(self):
