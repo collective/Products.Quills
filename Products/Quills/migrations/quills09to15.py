@@ -28,6 +28,8 @@ from Products.CMFCore.utils import getToolByName
 
 # Product imports
 from Products.Quills import MetaWeblogAPI
+from Products.Quills import config
+from Products.Quills import QuillsMessageFactory as _
 
 # plonetrackback imports
 from quills.trackback.interfaces import ITrackbackOutManager
@@ -188,9 +190,11 @@ class Migration(object):
         """
         # XXX Need to disable WeblogTopic content type after migration of topics
         if getattr(weblog.aq_explicit, 'topic_images', None) is None:
-            weblog.invokeFactory('Folder', 
-                                 'topic_images',
-                                 title='Topic Images')
+            typestool = getToolByName(weblog, 'portal_types')
+            typestool.constructContent('Folder', container=weblog,
+                                       id=config.TOPIC_IMAGE_FOLDER_ID,
+                                       title=_(u'label_topic_image_folder_name',
+                                               default=u'Topic Images'))
             print >> self.out, u"Created topic_images folder in weblog"
         topic_images = weblog.topic_images
         to_be_deleted = []
