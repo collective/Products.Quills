@@ -1,62 +1,167 @@
-Changelog (Quills)
+Changelog
 =========
 
-    (name of developer listed in brackets)
+Contributors
+------------
+
+The following people contributed to the Quills project during the period this 
+change-log covers. In lexical order:
+
+- Érico Andrei [erico_andrei_]
+
+- ? [dunny]
+
+- `Jan Hackel`_ [jhackel_]
+
+- `Tim Hicks`_ [tim2p_]
+
+- Jens W. Klein [jensens_]
+
+- Mikel Larreategi [erral]
+
+- Tom Lazar [tomster_],
+
+- Clayton Parker [claytron_]
+
+- `Reinout van Rees`_ [reinout_] 
+
+- Raphael Ritz [raphael_]
+
+- Justin Ryan [justizin_]
+
+- Jon Stahl [jonstahl_]
+
+- Sasha Vincic [svincic_]
+
+.. _erico_andrei: http://plone.org/author/erico_andrei
+.. _`Jan Hackel`: mailto:plonecode@hackel.name
+.. _jhackel: http://plone.org/author/jhackel
+.. _`Tim Hicks`: mailto:tim@sitefusion.co.uk
+.. _tim2p: http://quills.sitefusion.co.uk/
+.. _jensens: http://plone.org/author/jensens
+.. _tomster: http://plone.org/author/tomster
+.. _claytron: http://claytron.com/blog
+.. _`Reinout van Rees`: mailto:reinout@vanrees.org
+.. _reinout: http://reinout.vanrees.org/
+.. _raphael: http://plone.org/author/raphael
+.. _justizin: http://plone.org/author/justizin
+.. _jonstahl: http://plone.org/author/jonstahl
+.. _svincic: http://plone.org/author/svincic
+
 
 1.7.0 RC1 (unreleased)
 ----------------------
 
-1.7.0 Beta 3 (2008-?-?, r?????)
--------------------------------
+1.7.0 Beta 3 (2009-04-06, r83858)
+----------------------------------
 
-Contributors in alphabetical order: Érico Andrei, _`Jan Hackel`, _`Tim Hicks`,
-_`Mikel Larreategi`, _`Sasha Vincic`, ?dunny?
+Contributors in alphabetical order: Érico Andrei [erico_andrei],
+? [dunny], Jan Hackel [jhackel], Tim Hicks [tim2p], Mikel Larreategi [erral],
+Sasha Vincic [svincic] 
+
+(list incomplete)
+
+- Fix issue #119: jump back to the archive URLs after commenting.
+  [tim2p] (r78681)
+
+- Fix issue #120: breadcrumbs reflect archive URLs.
+  [tim2p] (r77711, r78060, r78068)
+
+- Fix issue #151: make post titles more visually more prominent than section
+  headings. [tim2p] (r78675)
+
+- Register portlets to the context instead of portal type or interface.
+  [erral] (r75744, r75745)
+
+- Fix issue #147: allow Unicode characters in keywords/topics.
+  [erral] (r74930, r74931)
+
+- Quills and QuillsEnabled can coexist on the same site now.
+  [jhackel] (r73682)
+
+- Fix issue #123: allow arbitrary workflows, specifically the single state
+  workflow works now. [jhackel] (r70247, r71678, r71711)
+
+- Fix issue #141: syndication works more reliable.
+  [jhackel, svincic] (r69456, r71622, r71623, r71624, r71626)
+
+- new and updated translations: Basque, German, Spanish 
+  [enrico_andrei, erral, jhackel] (r72830, r72831, r72832, r72877,
+  r72878, r72879,
+  r72921, r72922, r72923, r74082, r74084, r74087, r74089, r74090,
+  r74095, r74101, r74102, r74103, r74104 r75757, r75758, r76081, r76082,
+  r76084, r76085, r76089)
+
+- cause fewer warning log entries [jhackel] (r71712) 
+
+- lots of internal fixes and improvements (r68365, r72833, r72834,
+  r72835, r73857, r74085, r74088, r74375, r74923, r75523, r75763,
+  r75991, r76047, r76258, r78148, r78684)
+
+- better test-suites (r71673, r71707, r72157, r72191, r72282, r72513,
+  r76259, r76274, r77100, r77539, r78068, 78078, r78079)
 
 
-- leave archive URLs intact while commenting (issue #119; r78685)
+1.7.0 Beta 2 (2008-07-04, r67898)
+----------------------------------
 
-- breadcrumbs reflect archive URLs (issue #120 r77711, r78060, r78068)
+Contributors in alphabetical order: Tim Hicks [tim2p], Raphael Ritz [raphael], Justin Ryan [justizin]
 
-- make post titles more visually more promeninent than section headings
-  (issue #151, r78675)
-
-- register portlets to the context instead of portal type or interface (r75744, r75745)
-
-- Quills and QuillsEnabled can coexist on site now (r73682)
-
-- unicode characters in keywords/topics allowed (issue #147 r74930, r74931)
-
-- allow arbitrary workflows, specifically the single state workflow works
-  now (r70247; issue #123 r71678, r71711)
-
-- syndication works more reliable (r69456, r71622; issue #141 r71623, r71624; r71626)
-
-- new and updated translations: basque, german, spanish (r72830, r72831, r72832, r72877, r72878, r72879, r72921, r72922, r72923, r74082, r74084, r74087, r74089, r74090, r74095, r74101, r74102, r74103, r74104 r75757, r75758, r76081, r76082, r76084, r76085, r76089)
-
-- cause fewer warning log entries (r71712) 
-
-- lot's of internal fixes and improvments (r68365, r72833, r72834, r72835, r73857, r74085, r74088, r74375, r74923, r75523, r75763, r75991, r76047, r76258, r78148, r78684)
-
-- better test-suites (r71673, r71707, r72157, r72191, r72282, r72513, r76259, r76274, r77100, r77539, r78068, 78078, r78079)
+- fixes and improvements (r67215, r67468)
 
 
-1.7.0 Beta 2 (2008-?-?, r67898)
--------------------------------
+1.7.0 Beta 1 (2008-06-04, r66185)
+----------------------------------
 
-justizin, raphael, Tim Hicks
+Contributors in alphabetical order: Tim Hicks [tim2p], Jens W. Klein [jensens],
+Tom Lazar [tomster], Clayton Parker [claytron], Reinout van Rees [reinout],
+Justin Ryan [justizin], Jon Stahl [jonstahl]
 
-- lot's of internal fixes and improvments (r65079, r66171, r67215, r67468)
+- optional byline for posts [claytron] ](r61086)
+
+- eggified [tomster] (r59633, r59634, r59635, r59636)
+
+- Only show the recent comments portlet if there are actually comments to show.
+  [claytron] (r59289)
+
+- improve looks and stability of portlets [claytron, jensens, justizin, tomster]
+  (r52195, r54914, r55744, r55951, r55952, r56496, r56815, r59288, r59044)
+
+- locate weblog by interface [jensens, tim2p] (r56302, r56814, r56815)
+
+- Fixed bug where archive would miss post on last day of year or month.
+  [tim2p] (r56301)
+
+- more robust topic and archive views [claytron, tomster] (r52197, r55953,
+  r55954, r55955)
+
+- Fix issue #112: Make the URLs generated for comments in the recent comments
+  portlet archive-aware. [tim2p] (r52571)
+
+- Fix issue #117: Stop the admin portlet being shown to non-admin-ish users.
+  [tim2p] (r52562)
+
+- plone-3-ish looks for Quills [reinout] (r52226, r52228)
+
+- style sheet tuning [jonstahl] (r51922)
+
+- show comments count [tim2p] (r50095, r50096)
+
+- Fix for issue #111: /archive/ hard-coded into weblog archive URLs. [tim2p]
+  (r50065, r50067)
+
+- Fix for issue #97: comments, commenting button and content actions do not
+  show for posts [tim2p] (r50053)
+
+- internal fixes and improvements (r50068, r50966, r51917, r52190, r52194,
+  r55950, r55956, r56528, r56811, r56823, r59287, r61085, r62375, r65079,
+  r66171)
+
+- better test-bed (r50100)
 
 
-1.7.0 Beta 1 (2008-?-?, r66185)
--------------------------------
+1.6.0 Beta 1 (2007-09-24, r50045)
+----------------------------------
 
-
-- list yet to be compiled
-
-
-svn/1.6-dev Unreleased
-----------------------
-
-- Initial package structure. [zopeskel]
+Left for future generations to dig out...
 
