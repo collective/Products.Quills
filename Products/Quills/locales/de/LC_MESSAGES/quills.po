@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: quills-de\n"
-"POT-Creation-Date: 2009-05-08 13:12+0000\n"
+"POT-Creation-Date: 2009-05-14 13:57+0000\n"
 "PO-Revision-Date: 2008-11-18 21:11+0100\n"
 "Last-Translator: Jan Hackel <plonecode@hackel.name>\n"
 "Language-Team: Deutsch <en@li.org>\n"
@@ -32,16 +32,6 @@ msgstr "Eine kurze Einleitung für diesen Eintrag."
 #: ./WeblogEntry.py:71
 msgid "label_text"
 msgstr "Inhalt des Eintrags"
-
-#. Default: "Topic Images"
-#: ./Weblog.py:113
-msgid "label_topic_image_folder_name"
-msgstr ""
-
-#. Default: "Uploads"
-#: ./Weblog.py:119
-msgid "label_uploads_folder_name"
-msgstr ""
 
 #. Default: "Description"
 #: ./Weblog.py:86

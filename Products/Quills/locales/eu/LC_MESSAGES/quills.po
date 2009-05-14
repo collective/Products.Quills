@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Quills 1.5\n"
-"POT-Creation-Date: 2009-05-08 13:12+0000\n"
+"POT-Creation-Date: 2009-05-14 13:57+0000\n"
 "PO-Revision-Date: 2008-10-02 17:28+0100\n"
 "Last-Translator: Mikel Larreategi <mlarreategi@codesyntax.com>\n"
 "Language-Team: \n"
@@ -31,16 +31,6 @@ msgstr "Artikulu honen sarrera labur bat"
 #: ./WeblogEntry.py:71
 msgid "label_text"
 msgstr "Mezuaren testua"
-
-#. Default: "Topic Images"
-#: ./Weblog.py:113
-msgid "label_topic_image_folder_name"
-msgstr ""
-
-#. Default: "Uploads"
-#: ./Weblog.py:119
-msgid "label_uploads_folder_name"
-msgstr ""
 
 #. Default: "Description"
 #: ./Weblog.py:86

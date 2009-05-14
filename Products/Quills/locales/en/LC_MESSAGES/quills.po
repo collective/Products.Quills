@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2009-05-08 13:12+0000\n"
+"POT-Creation-Date: 2009-05-14 13:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,16 +27,6 @@ msgstr ""
 #. Default: "Entry Text"
 #: ./WeblogEntry.py:71
 msgid "label_text"
-msgstr ""
-
-#. Default: "Topic Images"
-#: ./Weblog.py:113
-msgid "label_topic_image_folder_name"
-msgstr ""
-
-#. Default: "Uploads"
-#: ./Weblog.py:119
-msgid "label_uploads_folder_name"
 msgstr ""
 
 #. Default: "Description"

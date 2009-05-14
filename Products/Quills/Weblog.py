@@ -108,13 +108,13 @@ def createSpecialFolders(blog, event):
     if config.CREATE_TOPIC_IMAGES_FOLDERS and not has_topic_images:
         typestool.constructContent('Folder', container=blog,
             id=config.TOPIC_IMAGE_FOLDER_ID,
-            title=_(u'label_topic_image_folder_name', default=u'Topic Images'))
+            title=u'Topic Images')
     has_uploads = hasattr(blog, 'uploads')
     # Create folder to store topic images
     if config.CREATE_UPLOAD_FOLDERS and not has_uploads:
         typestool.constructContent('Folder',container=blog,
             id=config.UPLOAD_FOLDER_ID,
-            title=_(u'label_uploads_folder_name', default=u'Uploads'))
+            title=u'Uploads')
 
 class Weblog(WeblogMixin, BaseFolder, BrowserDefaultMixin):
     """Weblog object.

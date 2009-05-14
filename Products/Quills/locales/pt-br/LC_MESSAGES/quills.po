@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Quills 1.5\n"
-"POT-Creation-Date: 2009-05-08 13:12+0000\n"
+"POT-Creation-Date: 2009-05-14 13:57+0000\n"
 "PO-Revision-Date: 2006-09-26 17:32-0300\n"
 "Last-Translator: Érico Andrei <erico@simplesconsultoria.com.br>\n"
 "Language-Team: \n"
@@ -32,16 +32,6 @@ msgstr ""
 #: ./WeblogEntry.py:71
 msgid "label_text"
 msgstr "Corpo da entrada"
-
-#. Default: "Topic Images"
-#: ./Weblog.py:113
-msgid "label_topic_image_folder_name"
-msgstr ""
-
-#. Default: "Uploads"
-#: ./Weblog.py:119
-msgid "label_uploads_folder_name"
-msgstr ""
 
 #. Default: "Description"
 #: ./Weblog.py:86

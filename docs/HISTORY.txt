@@ -58,8 +58,8 @@ change-log covers. In lexical order:
 .. _tomster: http://plone.org/author/tomster
 
 
-1.7.0 RC1 (unreleased)
-----------------------
+1.7.0 RC1 (2009-05-14, r86072)
+------------------------------
 
 Contributors in alphabetical order: Enzo Cesanelli [Luthy], 
 Jan Hackel [jhackel], Per Thulin [pthulin]

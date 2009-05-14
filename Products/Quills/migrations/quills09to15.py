@@ -29,7 +29,6 @@ from Products.CMFCore.utils import getToolByName
 # Product imports
 from Products.Quills import MetaWeblogAPI
 from Products.Quills import config
-from Products.Quills import QuillsMessageFactory as _
 
 # plonetrackback imports
 from quills.trackback.interfaces import ITrackbackOutManager
@@ -193,8 +192,7 @@ class Migration(object):
             typestool = getToolByName(weblog, 'portal_types')
             typestool.constructContent('Folder', container=weblog,
                                        id=config.TOPIC_IMAGE_FOLDER_ID,
-                                       title=_(u'label_topic_image_folder_name',
-                                               default=u'Topic Images'))
+                                       title=u'Topic Images')
             print >> self.out, u"Created topic_images folder in weblog"
         topic_images = weblog.topic_images
         to_be_deleted = []
