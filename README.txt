@@ -6,7 +6,18 @@ Quills is an Enterprise Weblog System for the Plone content management system.
 It is designed from the ground up to work well and provide specialized features
 for a multi-blog, multi-user environment.
 
-Requires Plone 3 or later.
+Requires Plone 3.1 or later.
+
+
+Extensions
+----------
+
+There are a few packages that add extra functionality to your Blog.
+
+quills.remoteblogging
+    Use your Blog with any Weblog Editor that supports the `MetaWeblog API`_.
+
+    .. _MetaWeblog API: http://www.metaweblogapi.com/
 
 
 Links
@@ -36,12 +47,4 @@ Code Repository
     `http://svn.plone.org/svn/collective/Products.Quills/`__.
 
     __ http://svn.plone.org/svn/collective/Products.Quills
-
-
-Credits
-=======
-
-- `Tim Hicks`_
-
-.. _`Tim Hicks`: tim@sitefusion.co.uk
 
