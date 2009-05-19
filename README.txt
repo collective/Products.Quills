@@ -1,6 +1,6 @@
-======
-Quills
-======
+===============
+Products.Quills
+===============
 
 Quills is an Enterprise Weblog System for the Plone content management system.
 It is designed from the ground up to work well and provide specialized features
@@ -10,7 +10,7 @@ Requires Plone 3.1 or later.
 
 
 Extensions
-----------
+==========
 
 There are a few packages that add extra functionality to your Blog.
 
