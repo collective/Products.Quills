@@ -191,8 +191,8 @@ Get the link to our topic.
     >>> link = browser.getLink("brokenTopic")
     >>> link.click()
     
-    >>> browser.title.split()[0]
-    'brokenTopic'
+    >>> browser.title
+    '...brokenTopic...'
 
 Show the portlet again.
 
