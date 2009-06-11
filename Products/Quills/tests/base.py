@@ -49,7 +49,7 @@ class QuillsTestCaseMixin:
 
     def createBlog(self, id):
         """Create a Weblog."""
-        self.portal.invokeFactory('Weblog', id=id)
+        self.portal.invokeFactory('Weblog', title="Test Weblog", id=id)
         return self.portal[id]
     
 class QuillsTestCase(QuillsTestCaseMixin, PloneTestCase.PloneTestCase):
