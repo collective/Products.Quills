@@ -11,7 +11,7 @@ change-log covers. In lexical order:
 
 - Enzo Cesanelli [Luthy_]
 
-- ? [deo]
+- Dorneles Tremea [deo]
 
 - ? [dunny]
 
@@ -44,7 +44,7 @@ change-log covers. In lexical order:
 .. _Luthy: http://plone.org/author/luthy
 .. _`Reinout van Rees`: mailto:reinout@vanrees.org
 .. _claytron: http://claytron.com/blog
-.. _erico_andrei: http://plone.org/author/erico_andrei
+.. _erico_andrei: http://www.simplesconsultoria.com.br
 .. _erral: http://eibar.org/blogak/erral
 .. _jensens: http://plone.org/author/jensens
 .. _jhackel: http://plone.org/author/jhackel
