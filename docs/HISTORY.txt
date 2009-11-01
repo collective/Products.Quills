@@ -27,6 +27,8 @@ change-log covers. In lexical order:
 
 - Tom Lazar [tomster_],
 
+- `Wojciech Lichota`_ [sargo_],
+
 - Thomas Clement Mogensen [tmog_]
 
 - Clayton Parker [claytron_]
@@ -62,6 +64,13 @@ change-log covers. In lexical order:
 .. _tim2p: http://quills.sitefusion.co.uk/
 .. _`Tim Hicks`: mailto:tim@sitefusion.co.uk
 .. _tomster: http://plone.org/author/tomster
+.. _`Wojcuech Lichota: http://lichota.pl
+.. _sargo: http://plone.org/author/sargo
+
+1.7.1 (Unreleased)
+---------------------------
+
+- Compatibility with Plone 4 [sargo]
 
 
 1.7.0 (2009-09-29, r98430_)

@@ -152,7 +152,12 @@ class WeblogEntry(QuillsMixin, BaseContent, BrowserDefaultMixin):
         # if no mimetype was specified, we use the default
         if mimetype is None:
             mimetype = self.getMimeType()
-        self.text.update(text, self, mimetype=mimetype)
+        
+        if hasattr(self, 'text'):
+        	self.text.update(text, self, mimetype=mimetype)
+       	else:
+        	field = self.getField('text')
+        	field.set(self, text, mimetype=mimetype)
 
     security.declareProtected(perms.EditContent, 'edit')
     def edit(self, title, excerpt, text, topics, mimetype=None):
