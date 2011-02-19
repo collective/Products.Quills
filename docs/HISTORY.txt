@@ -9,6 +9,8 @@ change-log covers. In lexical order:
 
 - Érico Andrei [erico_andrei_]
 
+- Jan-Carel Brand [jcbrand_]
+
 - Leonardo J. Caballero G. [macagua_]
 
 - Enzo Cesanelli [Luthy_]
@@ -56,6 +58,7 @@ change-log covers. In lexical order:
 .. _jonstahl: http://plone.org/author/jonstahl
 .. _justizin: http://plone.org/author/justizin
 .. _macagua: http://plone.org/author/macagua
+.. _jcbrand: http://opkode.net/media/blog
 .. _tmog: http://plone.org/author/tmog
 .. _pthulin: http://plone.org/author/pthulin
 .. _raphael: http://plone.org/author/raphael
@@ -71,7 +74,8 @@ change-log covers. In lexical order:
 ---------------------------
 
 - Compatibility with Plone 4 [sargo] (r100977_, r100979_)
-
+- Fixed problem where blog's topics view acquired an object with the tag name 
+  from higher up instead of showing blogs with that tag. [jcbrand] (r232360_)
 
 1.7.0 (2009-09-29, r98430_)
 ---------------------------
