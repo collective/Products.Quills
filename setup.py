@@ -27,7 +27,7 @@ setup(name='Products.Quills',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          'quills.app>=1.7.0,<=1.7.99',
+          'quills.app>=1.8a1',
       ],
       entry_points="""
       # -*- Entry points: -*-
