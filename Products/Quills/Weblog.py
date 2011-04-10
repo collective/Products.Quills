@@ -25,7 +25,6 @@
 from zope.interface import implements
 from zope.component import getUtility
 from AccessControl import ClassSecurityInfo
-from Acquisition import aq_base
 
 # Archetypes imports
 from Products.Archetypes.public import BaseFolderSchema
@@ -64,7 +63,6 @@ from quills.app.weblog import WeblogMixin
 import config
 import permissions as perms
 
-
 # This won't work because the `weblog' object is not aq-wrapped, so it's not
 # possible to use invokeFactory.
 #def weblogTopicImageFolderSetup(weblog, event):
@@ -93,7 +91,6 @@ WeblogSchema = BaseFolderSchema.copy() + Schema((
 
 # The subject is not language-specific
 WeblogSchema['subject'].languageIndependent = True
-
 
 
 def createSpecialFolders(blog, event):

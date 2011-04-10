@@ -1,7 +1,7 @@
-from setuptools import setup, find_packages
 import os
+from setuptools import setup, find_packages
 
-version = '1.7.1'
+version = '1.8a1'
 
 setup(name='Products.Quills',
       version=version,
@@ -28,8 +28,7 @@ setup(name='Products.Quills',
       install_requires=[
           'setuptools',
           'quills.app>=1.8a1',
+          'quills.core',
       ],
-      entry_points="""
-      # -*- Entry points: -*-
-      """,
+      entry_points=""" """,
       )
