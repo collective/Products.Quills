@@ -70,7 +70,7 @@ change-log covers. In lexical order:
 .. _`Wojcuech Lichota: http://lichota.pl
 .. _sargo: http://plone.org/author/sargo
 
-1.7.1 (Unreleased)
+1.8a1 (Unreleased)
 ---------------------------
 
 - Compatibility with Plone 4 [sargo] (r100977_, r100979_)
