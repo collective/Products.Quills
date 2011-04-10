@@ -70,6 +70,12 @@ change-log covers. In lexical order:
 .. _`Wojcuech Lichota: http://lichota.pl
 .. _sargo: http://plone.org/author/sargo
 
+1.8a2 (unreleased)
+------------------
+
+- Nothing changed yet.
+
+
 1.8a1 (2011-04-10)
 ------------------
 

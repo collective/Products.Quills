@@ -1,7 +1,7 @@
 import os
 from setuptools import setup, find_packages
 
-version = '1.8a1'
+version = '1.8a2dev'
 
 setup(name='Products.Quills',
       version=version,
