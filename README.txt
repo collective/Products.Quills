@@ -8,10 +8,10 @@ for a multi-blog, multi-user environment.
 
 Requires Plone 3.1 or later.
 
-Products.QuillsEnabled:
------------------------
+Newer Replacement: Products.QuillsEnabled:
+==========================================
 
-IMPORTANT: If you are new to Quills, you should probably use Products.QuillsEnabled 
+If you are new to Quills, you should probably use Products.QuillsEnabled 
 instead of Products.Quills. 
 
 It is a more lightweight and future-proof version that uses
