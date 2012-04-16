@@ -8,6 +8,15 @@ for a multi-blog, multi-user environment.
 
 Requires Plone 3.1 or later.
 
+Products.QuillsEnabled:
+-----------------------
+
+IMPORTANT: If you are new to Quills, you should probably use Products.QuillsEnabled 
+instead of Products.Quills. 
+
+It is a more lightweight and future-proof version that uses
+marker interfaces instead of custom portal types. Future development efforts
+will focus more on Products.QuillsEnabled then on Products.Quills.
 
 Extensions
 ==========
@@ -58,7 +67,7 @@ Issue Tracker
 
 Code Repository
     You can find the source code in the Plone Collective Repository at
-    `http://svn.plone.org/svn/collective/Products.Quills/`__.
+    `https://github.com/collective/Products.Quills/`__.
 
-    __ http://svn.plone.org/svn/collective/Products.Quills
+    __ https://github.com/collective/Products.Quills
 
