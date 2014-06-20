@@ -73,8 +73,8 @@ change-log covers. In lexical order:
 1.8a2 (unreleased)
 ------------------
 
-- Nothing changed yet.
-
+- Plone 4.3 compatibility
+  [ale-rt]
 
 1.8a1 (2011-04-10)
 ------------------

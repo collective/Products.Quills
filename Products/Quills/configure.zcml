@@ -3,6 +3,7 @@
            xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
            xmlns:five="http://namespaces.zope.org/five"
            xmlns:i18n="http://namespaces.zope.org/i18n"
+           xmlns:zcml="http://namespaces.zope.org/zcml"
            i18n_domain="quills">
 
   <include package="quills.app" />
@@ -29,12 +30,28 @@
       />
 
   <subscriber
+      zcml:condition="have plone-43"
+      for="quills.core.interfaces.IWeblog
+           zope.container.interfaces.IObjectAddedEvent"
+      handler="quills.app.activation.registerContextPortlets"
+      />
+
+  <subscriber
+      zcml:condition="have plone-43"
+      for="quills.core.interfaces.IWeblog
+           zope.container.interfaces.IObjectAddedEvent"
+      handler=".Weblog.createSpecialFolders"
+      />
+
+  <subscriber
+      zcml:condition="not-have plone-43"
       for="quills.core.interfaces.IWeblog
            zope.app.container.interfaces.IObjectAddedEvent"
       handler="quills.app.activation.registerContextPortlets"
       />
 
   <subscriber
+      zcml:condition="not-have plone-43"
       for="quills.core.interfaces.IWeblog
            zope.app.container.interfaces.IObjectAddedEvent"
       handler=".Weblog.createSpecialFolders"
