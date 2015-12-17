@@ -1,7 +1,7 @@
 import os
 from setuptools import setup, find_packages
 
-version = '1.8a2dev'
+version = '1.8'
 
 setup(name='Products.Quills',
       version=version,
@@ -17,9 +17,9 @@ setup(name='Products.Quills',
         ],
       keywords='plone blogging',
       author='Quills Team',
-      author_email='plone-quills@googlegroups.com',
-      url='http://plone.org/products/quills',
-      download_url="http://svn.plone.org/svn/collective/Products.Quills",
+      author_email='',
+      url='https://github.com/collective/Products.Quills',
+      download_url="https://github.com/collective/Products.Quills",
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['Products'],
