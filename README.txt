@@ -6,7 +6,7 @@ Quills is an Enterprise Weblog System for the Plone content management system.
 It is designed from the ground up to work well and provide specialized features
 for a multi-blog, multi-user environment.
 
-Requires Plone 3.1 or later.
+Requires Plone 3.1 or later. Has been tested for compatibility with Plone 4.3.
 
 Newer Replacement: Products.QuillsEnabled:
 ==========================================
@@ -47,9 +47,9 @@ Links
 =====
 
 Product Homepage
-    Visit `http://plone.org/products/quills`__ to learn more about Quills.
+    Visit `https://github.com/collective/Products.Quills`__ to learn more about Quills.
 
-    __ http://plone.org/products/quills
+    __ https://github.com/collective/Products.Quills
 
 Mailing List
     Read our mailing list archive at `Google Groups`__, or subscribe to it
@@ -62,7 +62,7 @@ Issue Tracker
     Report bugs and request features by using the `issue tracker`__ on our
     product homepage.
 
-    __ http://plone.org/products/quills/issues
+    __ https://github.com/collective/Products.Quills/issues
 
 
 Code Repository
