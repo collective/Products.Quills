@@ -4,7 +4,7 @@ Changelog
 1.8.1 (2016-12-27)
 ------------------
 
-- add PyPi classifiers
+- update README, add PyPi classifiers
   [tkimnguyen]
   
 - include all needed files
